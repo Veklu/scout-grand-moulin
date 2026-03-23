@@ -26,6 +26,48 @@ function scout_gm_setup() {
 }
 add_action('after_setup_theme','scout_gm_setup');
 
+// Reload textdomain and post type/taxonomy labels for user locale in admin.
+// Needed because after_setup_theme fires before the user is authenticated,
+// so load_theme_textdomain loads the site locale .mo (or fails if it doesn't exist).
+// By admin_menu time the user is known, so we reload with the correct locale.
+// Use the locale filter to ensure the user locale is used in admin,
+// so __() calls in post type labels resolve correctly at init time.
+add_filter('locale', function ($locale) {
+    if (is_admin() && function_exists('wp_get_current_user')) {
+        $user = wp_get_current_user();
+        if ($user->exists()) {
+            $user_locale = get_user_meta($user->ID, 'locale', true);
+            if ($user_locale) {
+                // Ensure textdomain is loaded for this locale
+                static $loaded = false;
+                if (!$loaded) {
+                    $loaded = true;
+                    $mofile = get_template_directory() . '/languages/scout-gm-' . $user_locale . '.mo';
+                    if (file_exists($mofile)) {
+                        unload_textdomain('scout-gm');
+                        load_textdomain('scout-gm', $mofile);
+                    }
+                }
+                return $user_locale;
+            }
+        }
+    }
+    return $locale;
+});
+
+// Fix taxonomy submenu labels that were built before user locale was applied
+add_action('admin_menu', function () {
+    global $submenu;
+    if (isset($submenu['upload.php'])) {
+        foreach ($submenu['upload.php'] as &$item) {
+            if (isset($item[2]) && strpos($item[2], 'taxonomy=scout_album') !== false) {
+                $item[0] = __('Albums photo', 'scout-gm');
+                break;
+            }
+        }
+    }
+}, 99);
+
 // ── ENQUEUE ──
 function scout_gm_enqueue() {
     wp_enqueue_style('scout-gm-fonts','https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap',[],null);
@@ -744,7 +786,7 @@ function scout_gm_get_user_units($user_id) {
 }
 
 function scout_gm_benevoles_admin_menu() {
-    add_menu_page('Bénévoles', 'Bénévoles', 'manage_options', 'scout-benevoles', 'scout_gm_benevoles_admin_page', 'dashicons-groups', 26);
+    add_menu_page(__('Bénévoles', 'scout-gm'), __('Bénévoles', 'scout-gm'), 'manage_options', 'scout-benevoles', 'scout_gm_benevoles_admin_page', 'dashicons-groups', 26);
 }
 add_action('admin_menu', 'scout_gm_benevoles_admin_menu');
 

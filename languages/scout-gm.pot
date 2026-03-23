@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Scout Grand-Moulin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-23 10:10-0400\n"
+"POT-Creation-Date: 2026-03-23 17:11-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Agenda"
 msgstr ""
 
-#: 404.php:42 header.php:82
+#: 404.php:42 functions.php:789 header.php:82
 msgid "Bénévoles"
 msgstr ""
 
@@ -176,7 +176,7 @@ msgstr ""
 msgid "Prochaines réunions"
 msgstr ""
 
-#: front-page.php:429 front-page.php:454 functions.php:271 page-unites.php:325
+#: front-page.php:429 front-page.php:454 functions.php:313 page-unites.php:325
 msgid "Castors"
 msgstr ""
 
@@ -188,7 +188,7 @@ msgstr ""
 msgid "Ven 18h45"
 msgstr ""
 
-#: front-page.php:430 front-page.php:455 functions.php:272 page-unites.php:326
+#: front-page.php:430 front-page.php:455 functions.php:314 page-unites.php:326
 msgid "Louveteaux"
 msgstr ""
 
@@ -200,7 +200,7 @@ msgstr ""
 msgid "Mar 18h45"
 msgstr ""
 
-#: front-page.php:431 front-page.php:456 functions.php:273 page-unites.php:327
+#: front-page.php:431 front-page.php:456 functions.php:315 page-unites.php:327
 msgid "Éclaireurs"
 msgstr ""
 
@@ -212,7 +212,7 @@ msgstr ""
 msgid "Dim 18h00"
 msgstr ""
 
-#: front-page.php:432 front-page.php:457 functions.php:274 page-unites.php:328
+#: front-page.php:432 front-page.php:457 functions.php:316 page-unites.php:328
 msgid "Pionniers"
 msgstr ""
 
@@ -321,308 +321,308 @@ msgstr ""
 msgid "Navigation principale"
 msgstr ""
 
-#: functions.php:22 functions.php:43
+#: functions.php:22 functions.php:85
 msgid "Pied de page"
 msgstr ""
 
-#: functions.php:76
-msgid "Coordonnées du groupe"
-msgstr ""
-
-#: functions.php:79
-msgid "Courriel"
-msgstr ""
-
-#: functions.php:80
-msgid "Téléphone"
-msgstr ""
-
-#: functions.php:81
-msgid "Responsable vie privée (Loi 25)"
-msgstr ""
-
-#: functions.php:104
+#: functions.php:64 functions.php:146
 msgid "Albums photo"
 msgstr ""
 
-#: functions.php:105
+#: functions.php:118
+msgid "Coordonnées du groupe"
+msgstr ""
+
+#: functions.php:121
+msgid "Courriel"
+msgstr ""
+
+#: functions.php:122
+msgid "Téléphone"
+msgstr ""
+
+#: functions.php:123
+msgid "Responsable vie privée (Loi 25)"
+msgstr ""
+
+#: functions.php:147
 msgid "Album"
 msgstr ""
 
-#: functions.php:106
+#: functions.php:148
 msgid "Ajouter un album"
 msgstr ""
 
-#: functions.php:107
+#: functions.php:149
 msgid "Modifier l'album"
 msgstr ""
 
-#: functions.php:108
+#: functions.php:150
 msgid "Chercher un album"
 msgstr ""
 
-#: functions.php:109
+#: functions.php:151
 msgid "Tous les albums"
 msgstr ""
 
-#: functions.php:134
+#: functions.php:176
 msgid "— Aucun album —"
 msgstr ""
 
-#: functions.php:141
+#: functions.php:183
 msgid "Album photo"
 msgstr ""
 
-#: functions.php:225
+#: functions.php:267
 msgid "Événements"
 msgstr ""
 
-#: functions.php:226
+#: functions.php:268
 msgid "Événement"
 msgstr ""
 
-#: functions.php:227 functions.php:228
+#: functions.php:269 functions.php:270
 msgid "Ajouter un événement"
 msgstr ""
 
-#: functions.php:229
+#: functions.php:271
 msgid "Modifier l'événement"
 msgstr ""
 
-#: functions.php:230
+#: functions.php:272
 msgid "Tous les événements"
 msgstr ""
 
-#: functions.php:231
+#: functions.php:273
 msgid "Chercher un événement"
 msgstr ""
 
-#: functions.php:245
+#: functions.php:287
 msgid "Détails de l'événement"
 msgstr ""
 
-#: functions.php:263
+#: functions.php:305
 msgid "Date de début *"
 msgstr ""
 
-#: functions.php:264
+#: functions.php:306
 msgid "Date de fin"
 msgstr ""
 
-#: functions.php:264
+#: functions.php:306
 msgid "Laisser vide pour un événement d'une journée"
 msgstr ""
 
-#: functions.php:265
+#: functions.php:307
 msgid "Heure début"
 msgstr ""
 
-#: functions.php:266
+#: functions.php:308
 msgid "Heure fin"
 msgstr ""
 
-#: functions.php:267 functions.php:400
+#: functions.php:309 functions.php:442
 msgid "Lieu"
 msgstr ""
 
-#: functions.php:267
+#: functions.php:309
 msgid "Ex: École Les Mésanges"
 msgstr ""
 
-#: functions.php:268
+#: functions.php:310
 msgid "Unité / Type"
 msgstr ""
 
-#: functions.php:270 functions.php:375
+#: functions.php:312 functions.php:417
 msgid "Événement spécial"
 msgstr ""
 
-#: functions.php:275
+#: functions.php:317
 msgid "Tout le groupe"
 msgstr ""
 
-#: functions.php:281
+#: functions.php:323
 msgid "Récurrence"
 msgstr ""
 
-#: functions.php:283
+#: functions.php:325
 msgid "Répéter"
 msgstr ""
 
-#: functions.php:285
+#: functions.php:327
 msgid "Ne pas répéter"
 msgstr ""
 
-#: functions.php:286
+#: functions.php:328
 msgid "Chaque semaine"
 msgstr ""
 
-#: functions.php:287
+#: functions.php:329
 msgid "Aux deux semaines"
 msgstr ""
 
-#: functions.php:288
+#: functions.php:330
 msgid "Chaque mois (même jour du mois)"
 msgstr ""
 
-#: functions.php:292
+#: functions.php:334
 msgid "Répéter jusqu'au"
 msgstr ""
 
-#: functions.php:292
+#: functions.php:334
 msgid "Date de fin de la récurrence"
 msgstr ""
 
-#: functions.php:293
+#: functions.php:335
 msgid "Exceptions"
 msgstr ""
 
-#: functions.php:293
+#: functions.php:335
 msgid "Dates à exclure (séparées par des virgules, format AAAA-MM-JJ)"
 msgstr ""
 
-#: functions.php:299
+#: functions.php:341
 msgid "Multi-jours :"
 msgstr ""
 
-#: functions.php:300
+#: functions.php:342
 msgid ""
 "Remplissez la date de fin pour les camps et sorties. L'événement apparaîtra "
 "sur chaque jour entre les deux dates."
 msgstr ""
 
-#: functions.php:301
+#: functions.php:343
 msgid "Récurrence :"
 msgstr ""
 
-#: functions.php:302
+#: functions.php:344
 msgid ""
 "Utilisez la récurrence pour des activités régulières (ex: entraînement "
 "chaque lundi). Les exceptions permettent de sauter des dates spécifiques "
 "(vacances, congés)."
 msgstr ""
 
-#: functions.php:333
+#: functions.php:375
 msgid "Appels aux bénévoles"
 msgstr ""
 
-#: functions.php:334
+#: functions.php:376
 msgid "Appel"
 msgstr ""
 
-#: functions.php:335
+#: functions.php:377
 msgid "Ajouter un appel"
 msgstr ""
 
-#: functions.php:336
+#: functions.php:378
 msgid "Nouvel appel aux bénévoles"
 msgstr ""
 
-#: functions.php:337
+#: functions.php:379
 msgid "Modifier l'appel"
 msgstr ""
 
-#: functions.php:338
+#: functions.php:380
 msgid "Tous les appels"
 msgstr ""
 
-#: functions.php:339
+#: functions.php:381
 msgid "Chercher un appel"
 msgstr ""
 
-#: functions.php:352
+#: functions.php:394
 msgid "Détails de l'appel"
 msgstr ""
 
-#: functions.php:368
+#: functions.php:410
 msgid "Catégorie"
 msgstr ""
 
-#: functions.php:370
+#: functions.php:412
 msgid "Cuisine / Camp"
 msgstr ""
 
-#: functions.php:371 page-benevoles.php:805
+#: functions.php:413 page-benevoles.php:805
 msgid "Aide au camp"
 msgstr ""
 
-#: functions.php:372
+#: functions.php:414
 msgid "Transport"
 msgstr ""
 
-#: functions.php:373
+#: functions.php:415
 msgid "Animation"
 msgstr ""
 
-#: functions.php:374
+#: functions.php:416
 msgid "Logistique"
 msgstr ""
 
-#: functions.php:376
+#: functions.php:418
 msgid "Formation"
 msgstr ""
 
-#: functions.php:377
+#: functions.php:419
 msgid "Aide générale"
 msgstr ""
 
-#: functions.php:380
+#: functions.php:422
 msgid "Urgence"
 msgstr ""
 
-#: functions.php:382
+#: functions.php:424
 msgid "Faible — on a le temps"
 msgstr ""
 
-#: functions.php:383
+#: functions.php:425
 msgid "Normal"
 msgstr ""
 
-#: functions.php:384 page-benevoles.php:737
+#: functions.php:426 page-benevoles.php:737
 msgid "Urgent"
 msgstr ""
 
-#: functions.php:385
+#: functions.php:427
 msgid "Critique — besoin immédiat!"
 msgstr ""
 
-#: functions.php:388
+#: functions.php:430
 msgid "Places disponibles"
 msgstr ""
 
-#: functions.php:390
+#: functions.php:432
 msgid "Laisser vide = illimité"
 msgstr ""
 
-#: functions.php:392
+#: functions.php:434
 msgid "Places comblées"
 msgstr ""
 
-#: functions.php:395
+#: functions.php:437
 msgid "Date de l'activité"
 msgstr ""
 
-#: functions.php:398
+#: functions.php:440
 msgid "Début — Fin (optionnel)"
 msgstr ""
 
-#: functions.php:401
+#: functions.php:443
 msgid "Ex: Camp Tamaracouta, École Les Mésanges"
 msgstr ""
 
-#: functions.php:403
+#: functions.php:445
 msgid "Courriel de contact"
 msgstr ""
 
-#: functions.php:404
+#: functions.php:446
 msgid "Laisser vide = courriel du groupe"
 msgstr ""
 
-#: functions.php:440
+#: functions.php:482
 msgid "Horaires récurrents"
 msgstr ""
 
-#: functions.php:441
+#: functions.php:483
 msgid ""
 "Définir les réunions récurrentes par unité. Format: jour de la semaine "
 "(1=lundi, 5=vendredi, 7=dimanche)."
