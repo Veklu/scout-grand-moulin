@@ -1,0 +1,92 @@
+/* ============================================================
+   Single post — typography & spacing
+   Loaded only on single.php
+   ============================================================ */
+
+.post-content {
+    font-size:   1.05rem;
+    line-height: 1.8;
+    color:       var(--text-main, #2a2a26);
+}
+
+/* Paragraphs */
+.post-content p {
+    margin-bottom: 1.4em;
+}
+
+/* Headings */
+.post-content h2 {
+    font-size:     1.45rem;
+    font-weight:   700;
+    margin-top:    2em;
+    margin-bottom: 0.6em;
+    line-height:   1.25;
+    color:         var(--green, #007748);
+}
+
+.post-content h3 {
+    font-size:     1.15rem;
+    font-weight:   700;
+    margin-top:    1.6em;
+    margin-bottom: 0.5em;
+    line-height:   1.3;
+}
+
+/* Lists */
+.post-content ul,
+.post-content ol {
+    padding-left:  1.4em;
+    margin-bottom: 1.4em;
+}
+
+.post-content li {
+    margin-bottom: 0.45em;
+    line-height:   1.75;
+}
+
+/* Scout bubble blocks */
+.post-content .scout-bubble {
+    margin-top:    1.6em;
+    margin-bottom: 1.6em;
+}
+
+/* Images */
+.post-content figure {
+    margin:        2em 0;
+}
+
+.post-content figure figcaption {
+    font-size:  0.82rem;
+    color:      var(--text-muted, #6a6a62);
+    text-align: center;
+    margin-top: 0.5em;
+    font-style: italic;
+}
+
+/* Blockquotes */
+.post-content blockquote {
+    border-left:   4px solid var(--green, #007748);
+    margin:        1.8em 0;
+    padding:       0.8em 1.2em;
+    background:    #f9f8f5;
+    border-radius: 0 8px 8px 0;
+    font-style:    italic;
+    color:         var(--text-soft, #4a4a44);
+}
+
+/* Strong / bold */
+.post-content strong {
+    font-weight: 600;
+    color:       var(--text-main, #2a2a26);
+}
+
+/* Links */
+.post-content a {
+    color:           var(--green, #007748);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.post-content a:hover {
+    color: var(--green-dark, #005a36);
+}

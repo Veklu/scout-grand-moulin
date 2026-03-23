@@ -1,0 +1,10 @@
+  background: linear-gradient(165deg, #001a0f 0%, #003320 35%, #004d30 70%, #005a36 100%);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+.event-castor { background: #e0f2fe; color: #0369a1; }
+.event-louveteau { background: #fef3c7; color: #b45309; }
+.event-eclaireur { background: #d1fae5; color: #047857; }
+.event-pionnier { background: #fce7f3; color: #be185d; }
+.schedule-card:nth-child(1)::before { background: var(--scout-blue); }
+.schedule-card:nth-child(2)::before { background: var(--scout-gold); }
+.schedule-card:nth-child(3)::before { background: var(--scout-green); }
+.schedule-card:nth-child(4)::before { background: var(--scout-purple); }

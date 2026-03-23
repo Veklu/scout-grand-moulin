@@ -1,0 +1,6 @@
+.wp-block-scout-gm-info-bubble {
+    margin-bottom: 4px;
+}
+.wp-block-scout-gm-info-bubble.is-selected {
+    box-shadow: 0 0 0 2px #007748;
+}

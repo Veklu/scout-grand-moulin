@@ -1,0 +1,32 @@
+{
+  "apiVersion": 3,
+  "name": "scout-gm/info-bubble",
+  "title": "Bulle d'info",
+  "category": "scout-grandmoulin",
+  "icon": "format-aside",
+  "description": "Bloc coloré avec titre et texte — idéal pour mettre en valeur une section.",
+  "keywords": ["bulle", "info", "couleur", "section", "bubble"],
+  "version": "1.0.0",
+  "textdomain": "scout-gm",
+  "editorScript": "file:./src/editor.js",
+  "editorStyle": "file:./src/editor.css",
+  "style": "file:./src/style.css",
+  "attributes": {
+    "icon": {
+      "type": "string",
+      "default": "🏕️"
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "colorScheme": {
+      "type": "string",
+      "default": "green"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": false
+  }
+}
