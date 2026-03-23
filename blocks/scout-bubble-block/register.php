@@ -11,7 +11,7 @@ add_filter( 'block_categories_all', function ( $categories ) {
     }
     array_unshift( $categories, [
         'slug'  => 'scout-grandmoulin',
-        'title' => '⚜️ Grand-Moulin',
+        'title' => '⚜️ ' . __('Grand-Moulin', 'scout-gm'),
         'icon'  => null,
     ] );
     return $categories;

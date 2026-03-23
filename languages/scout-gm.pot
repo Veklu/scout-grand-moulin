@@ -1,0 +1,1396 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Scout Grand-Moulin package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Scout Grand-Moulin 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-23 10:10-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: 404.php:7
+msgid "Oups! Sentier introuvable"
+msgstr ""
+
+#: 404.php:8
+msgid ""
+"On dirait que cette piste ne mène nulle part. Même les meilleurs éclaireurs "
+"se perdent parfois!"
+msgstr ""
+
+#: 404.php:14
+msgid "Voici quelques pistes pour retrouver votre chemin :"
+msgstr ""
+
+#: 404.php:19 header.php:77
+msgid "Accueil"
+msgstr ""
+
+#: 404.php:20
+msgid "Retour à la page principale"
+msgstr ""
+
+#: 404.php:24 header.php:83
+msgid "S'inscrire"
+msgstr ""
+
+#: 404.php:25
+msgid "Inscription pour la prochaine année scoute"
+msgstr ""
+
+#: 404.php:29 front-page.php:450 page-unites.php:323
+msgid "Nos unités"
+msgstr ""
+
+#: 404.php:30
+msgid "Castors, Louveteaux, Éclaireurs, Pionniers"
+msgstr ""
+
+#: 404.php:35
+msgid "Vous cherchez à inscrire votre enfant?"
+msgstr ""
+
+#: 404.php:36
+msgid ""
+"Les inscriptions pour l'année scoute sont ouvertes! Rejoignez la grande "
+"famille du 5e Groupe scout Grand-Moulin."
+msgstr ""
+
+#: 404.php:37
+msgid "S'inscrire maintenant"
+msgstr ""
+
+#: 404.php:41 header.php:81 page-agenda.php:391
+msgid "Agenda"
+msgstr ""
+
+#: 404.php:42 header.php:82
+msgid "Bénévoles"
+msgstr ""
+
+#: 404.php:43 header.php:80
+msgid "Galerie"
+msgstr ""
+
+#: 404.php:44 page-benevoles.php:807
+msgid "Nous contacter"
+msgstr ""
+
+#: blocks/scout-bubble-block/register.php:14
+msgid "Grand-Moulin"
+msgstr ""
+
+#: footer.php:7
+msgid ""
+"Groupe scout desservant Deux-Montagnes, Sainte-Marthe-sur-le-Lac, Oka, "
+"Pointe-Calumet et Saint-Joseph-du-Lac."
+msgstr ""
+
+#: footer.php:11
+msgid "Navigation"
+msgstr ""
+
+#: footer.php:15
+msgid "Ressources"
+msgstr ""
+
+#: footer.php:17
+msgid "Scouts du Canada"
+msgstr ""
+
+#: footer.php:18
+msgid "District Les Ailes du Nord"
+msgstr ""
+
+#: footer.php:22
+msgid "Légal"
+msgstr ""
+
+#: footer.php:25 page-confidentialite.php:323
+msgid "Politique de confidentialité"
+msgstr ""
+
+#: footer.php:27 page-conditions.php:323
+msgid "Conditions d'utilisation"
+msgstr ""
+
+#: footer.php:28
+#, php-format
+msgid "Responsable : %s"
+msgstr ""
+
+#: footer.php:33
+msgid "Association des Scouts du Canada"
+msgstr ""
+
+#: footer.php:34
+msgid "Conforme à la Loi 25 du Québec"
+msgstr ""
+
+#: front-page.php:381
+msgid "Scouts du Canada — District Les Ailes du Nord"
+msgstr ""
+
+#: front-page.php:384
+#, php-format
+msgid "L'aventure<br>commence %s"
+msgstr ""
+
+#: front-page.php:384
+msgid "ici"
+msgstr ""
+
+#: front-page.php:386
+msgid ""
+"Le 5e Groupe scout Grand-Moulin offre aux jeunes de 7 à 17 ans un "
+"environnement de croissance, d'entraide et de découverte en plein air."
+msgstr ""
+
+#: front-page.php:387
+msgid "Villes desservies"
+msgstr ""
+
+#: front-page.php:388
+msgid "Nous desservons votre communauté"
+msgstr ""
+
+#: front-page.php:422 front-page.php:471
+msgid "Inscrire mon enfant"
+msgstr ""
+
+#: front-page.php:423
+msgid "Découvrir nos unités"
+msgstr ""
+
+#: front-page.php:428
+msgid "Prochaines réunions"
+msgstr ""
+
+#: front-page.php:429 front-page.php:454 functions.php:271 page-unites.php:325
+msgid "Castors"
+msgstr ""
+
+#: front-page.php:429
+msgid "· 7-8 ans"
+msgstr ""
+
+#: front-page.php:429
+msgid "Ven 18h45"
+msgstr ""
+
+#: front-page.php:430 front-page.php:455 functions.php:272 page-unites.php:326
+msgid "Louveteaux"
+msgstr ""
+
+#: front-page.php:430
+msgid "· 9-11 ans"
+msgstr ""
+
+#: front-page.php:430
+msgid "Mar 18h45"
+msgstr ""
+
+#: front-page.php:431 front-page.php:456 functions.php:273 page-unites.php:327
+msgid "Éclaireurs"
+msgstr ""
+
+#: front-page.php:431
+msgid "· 12-14 ans"
+msgstr ""
+
+#: front-page.php:431
+msgid "Dim 18h00"
+msgstr ""
+
+#: front-page.php:432 front-page.php:457 functions.php:274 page-unites.php:328
+msgid "Pionniers"
+msgstr ""
+
+#: front-page.php:432
+msgid "· 14-17 ans"
+msgstr ""
+
+#: front-page.php:432 page-agenda.php:403
+msgid "À déterminer"
+msgstr ""
+
+#: front-page.php:435
+msgid "Contactez-nous"
+msgstr ""
+
+#: front-page.php:451
+msgid "Quatre branches adaptées à chaque groupe d'âge, du castor au pionnier."
+msgstr ""
+
+#: front-page.php:454 page-unites.php:325
+msgid "Badge Castors — Scouts du Canada"
+msgstr ""
+
+#: front-page.php:454
+msgid "7 — 8 ans"
+msgstr ""
+
+#: front-page.php:454
+msgid ""
+"Découverte du scoutisme par le jeu, la nature et l'apprentissage en petit "
+"groupe."
+msgstr ""
+
+#: front-page.php:455 page-unites.php:326
+msgid "Badge Louveteaux — Scouts du Canada"
+msgstr ""
+
+#: front-page.php:455
+msgid "9 — 11 ans"
+msgstr ""
+
+#: front-page.php:455
+msgid ""
+"Aventures en meute, développement de l'autonomie et du sens de la communauté."
+msgstr ""
+
+#: front-page.php:456 page-unites.php:327
+msgid "Badge Éclaireurs — Scouts du Canada"
+msgstr ""
+
+#: front-page.php:456
+msgid "12 — 14 ans"
+msgstr ""
+
+#: front-page.php:456
+msgid "Camps, projets d'équipe, leadership et défis en plein air."
+msgstr ""
+
+#: front-page.php:457 page-unites.php:328
+msgid "Badge Pionniers — Scouts du Canada"
+msgstr ""
+
+#: front-page.php:457
+msgid "14 — 17 ans"
+msgstr ""
+
+#: front-page.php:457
+msgid ""
+"Engagement communautaire, autonomie complète et préparation à la vie adulte."
+msgstr ""
+
+#: front-page.php:463
+msgid "Pourquoi le scoutisme?"
+msgstr ""
+
+#: front-page.php:464
+msgid "Le scoutisme développe des compétences pour la vie."
+msgstr ""
+
+#: front-page.php:467
+msgid "Plein air"
+msgstr ""
+
+#: front-page.php:467
+msgid ""
+"Camps, randonnées, canot — une connexion directe avec la nature québécoise."
+msgstr ""
+
+#: front-page.php:468
+msgid "Communauté"
+msgstr ""
+
+#: front-page.php:468
+msgid "Des amitiés durables, l'entraide et le sens de l'appartenance."
+msgstr ""
+
+#: front-page.php:469
+msgid "Leadership"
+msgstr ""
+
+#: front-page.php:469
+msgid "Prise d'initiative, travail d'équipe et développement du caractère."
+msgstr ""
+
+#: functions.php:21 header.php:55
+msgid "Navigation principale"
+msgstr ""
+
+#: functions.php:22 functions.php:43
+msgid "Pied de page"
+msgstr ""
+
+#: functions.php:76
+msgid "Coordonnées du groupe"
+msgstr ""
+
+#: functions.php:79
+msgid "Courriel"
+msgstr ""
+
+#: functions.php:80
+msgid "Téléphone"
+msgstr ""
+
+#: functions.php:81
+msgid "Responsable vie privée (Loi 25)"
+msgstr ""
+
+#: functions.php:104
+msgid "Albums photo"
+msgstr ""
+
+#: functions.php:105
+msgid "Album"
+msgstr ""
+
+#: functions.php:106
+msgid "Ajouter un album"
+msgstr ""
+
+#: functions.php:107
+msgid "Modifier l'album"
+msgstr ""
+
+#: functions.php:108
+msgid "Chercher un album"
+msgstr ""
+
+#: functions.php:109
+msgid "Tous les albums"
+msgstr ""
+
+#: functions.php:134
+msgid "— Aucun album —"
+msgstr ""
+
+#: functions.php:141
+msgid "Album photo"
+msgstr ""
+
+#: functions.php:225
+msgid "Événements"
+msgstr ""
+
+#: functions.php:226
+msgid "Événement"
+msgstr ""
+
+#: functions.php:227 functions.php:228
+msgid "Ajouter un événement"
+msgstr ""
+
+#: functions.php:229
+msgid "Modifier l'événement"
+msgstr ""
+
+#: functions.php:230
+msgid "Tous les événements"
+msgstr ""
+
+#: functions.php:231
+msgid "Chercher un événement"
+msgstr ""
+
+#: functions.php:245
+msgid "Détails de l'événement"
+msgstr ""
+
+#: functions.php:263
+msgid "Date de début *"
+msgstr ""
+
+#: functions.php:264
+msgid "Date de fin"
+msgstr ""
+
+#: functions.php:264
+msgid "Laisser vide pour un événement d'une journée"
+msgstr ""
+
+#: functions.php:265
+msgid "Heure début"
+msgstr ""
+
+#: functions.php:266
+msgid "Heure fin"
+msgstr ""
+
+#: functions.php:267 functions.php:400
+msgid "Lieu"
+msgstr ""
+
+#: functions.php:267
+msgid "Ex: École Les Mésanges"
+msgstr ""
+
+#: functions.php:268
+msgid "Unité / Type"
+msgstr ""
+
+#: functions.php:270 functions.php:375
+msgid "Événement spécial"
+msgstr ""
+
+#: functions.php:275
+msgid "Tout le groupe"
+msgstr ""
+
+#: functions.php:281
+msgid "Récurrence"
+msgstr ""
+
+#: functions.php:283
+msgid "Répéter"
+msgstr ""
+
+#: functions.php:285
+msgid "Ne pas répéter"
+msgstr ""
+
+#: functions.php:286
+msgid "Chaque semaine"
+msgstr ""
+
+#: functions.php:287
+msgid "Aux deux semaines"
+msgstr ""
+
+#: functions.php:288
+msgid "Chaque mois (même jour du mois)"
+msgstr ""
+
+#: functions.php:292
+msgid "Répéter jusqu'au"
+msgstr ""
+
+#: functions.php:292
+msgid "Date de fin de la récurrence"
+msgstr ""
+
+#: functions.php:293
+msgid "Exceptions"
+msgstr ""
+
+#: functions.php:293
+msgid "Dates à exclure (séparées par des virgules, format AAAA-MM-JJ)"
+msgstr ""
+
+#: functions.php:299
+msgid "Multi-jours :"
+msgstr ""
+
+#: functions.php:300
+msgid ""
+"Remplissez la date de fin pour les camps et sorties. L'événement apparaîtra "
+"sur chaque jour entre les deux dates."
+msgstr ""
+
+#: functions.php:301
+msgid "Récurrence :"
+msgstr ""
+
+#: functions.php:302
+msgid ""
+"Utilisez la récurrence pour des activités régulières (ex: entraînement "
+"chaque lundi). Les exceptions permettent de sauter des dates spécifiques "
+"(vacances, congés)."
+msgstr ""
+
+#: functions.php:333
+msgid "Appels aux bénévoles"
+msgstr ""
+
+#: functions.php:334
+msgid "Appel"
+msgstr ""
+
+#: functions.php:335
+msgid "Ajouter un appel"
+msgstr ""
+
+#: functions.php:336
+msgid "Nouvel appel aux bénévoles"
+msgstr ""
+
+#: functions.php:337
+msgid "Modifier l'appel"
+msgstr ""
+
+#: functions.php:338
+msgid "Tous les appels"
+msgstr ""
+
+#: functions.php:339
+msgid "Chercher un appel"
+msgstr ""
+
+#: functions.php:352
+msgid "Détails de l'appel"
+msgstr ""
+
+#: functions.php:368
+msgid "Catégorie"
+msgstr ""
+
+#: functions.php:370
+msgid "Cuisine / Camp"
+msgstr ""
+
+#: functions.php:371 page-benevoles.php:805
+msgid "Aide au camp"
+msgstr ""
+
+#: functions.php:372
+msgid "Transport"
+msgstr ""
+
+#: functions.php:373
+msgid "Animation"
+msgstr ""
+
+#: functions.php:374
+msgid "Logistique"
+msgstr ""
+
+#: functions.php:376
+msgid "Formation"
+msgstr ""
+
+#: functions.php:377
+msgid "Aide générale"
+msgstr ""
+
+#: functions.php:380
+msgid "Urgence"
+msgstr ""
+
+#: functions.php:382
+msgid "Faible — on a le temps"
+msgstr ""
+
+#: functions.php:383
+msgid "Normal"
+msgstr ""
+
+#: functions.php:384 page-benevoles.php:737
+msgid "Urgent"
+msgstr ""
+
+#: functions.php:385
+msgid "Critique — besoin immédiat!"
+msgstr ""
+
+#: functions.php:388
+msgid "Places disponibles"
+msgstr ""
+
+#: functions.php:390
+msgid "Laisser vide = illimité"
+msgstr ""
+
+#: functions.php:392
+msgid "Places comblées"
+msgstr ""
+
+#: functions.php:395
+msgid "Date de l'activité"
+msgstr ""
+
+#: functions.php:398
+msgid "Début — Fin (optionnel)"
+msgstr ""
+
+#: functions.php:401
+msgid "Ex: Camp Tamaracouta, École Les Mésanges"
+msgstr ""
+
+#: functions.php:403
+msgid "Courriel de contact"
+msgstr ""
+
+#: functions.php:404
+msgid "Laisser vide = courriel du groupe"
+msgstr ""
+
+#: functions.php:440
+msgid "Horaires récurrents"
+msgstr ""
+
+#: functions.php:441
+msgid ""
+"Définir les réunions récurrentes par unité. Format: jour de la semaine "
+"(1=lundi, 5=vendredi, 7=dimanche)."
+msgstr ""
+
+#: header.php:36
+msgid "Aller au contenu principal"
+msgstr ""
+
+#: header.php:39
+msgid "Consentement aux cookies"
+msgstr ""
+
+#: header.php:42
+msgid "Respect de votre vie privée"
+msgstr ""
+
+#: header.php:43
+msgid ""
+"Conformément à la Loi 25 du Québec, nous utilisons des témoins strictement "
+"nécessaires au fonctionnement du site. Les témoins analytiques sont "
+"désactivés par défaut."
+msgstr ""
+
+#: header.php:44
+msgid "En savoir plus"
+msgstr ""
+
+#: header.php:47
+msgid "Tout accepter"
+msgstr ""
+
+#: header.php:48
+msgid "Nécessaires seulement"
+msgstr ""
+
+#: header.php:49
+msgid "Personnaliser"
+msgstr ""
+
+#: header.php:63
+msgid "Scouts du Canada · Deux-Montagnes"
+msgstr ""
+
+#: header.php:78
+msgid "Unités"
+msgstr ""
+
+#: header.php:79
+msgid "Inscription"
+msgstr ""
+
+#: index.php:9
+msgid "Lire la suite"
+msgstr ""
+
+#: page-agenda.php:16
+msgid "Janvier"
+msgstr ""
+
+#: page-agenda.php:16
+msgid "Février"
+msgstr ""
+
+#: page-agenda.php:16
+msgid "Mars"
+msgstr ""
+
+#: page-agenda.php:16
+msgid "Avril"
+msgstr ""
+
+#: page-agenda.php:16
+msgid "Mai"
+msgstr ""
+
+#: page-agenda.php:16
+msgid "Juin"
+msgstr ""
+
+#: page-agenda.php:16
+msgid "Juillet"
+msgstr ""
+
+#: page-agenda.php:16
+msgid "Août"
+msgstr ""
+
+#: page-agenda.php:16
+msgid "Septembre"
+msgstr ""
+
+#: page-agenda.php:16
+msgid "Octobre"
+msgstr ""
+
+#: page-agenda.php:16
+msgid "Novembre"
+msgstr ""
+
+#: page-agenda.php:16
+msgid "Décembre"
+msgstr ""
+
+#: page-agenda.php:17
+msgid "Dim"
+msgstr ""
+
+#: page-agenda.php:17
+msgid "Lun"
+msgstr ""
+
+#: page-agenda.php:17
+msgid "Mar"
+msgstr ""
+
+#: page-agenda.php:17
+msgid "Mer"
+msgstr ""
+
+#: page-agenda.php:17
+msgid "Jeu"
+msgstr ""
+
+#: page-agenda.php:17
+msgid "Ven"
+msgstr ""
+
+#: page-agenda.php:17
+msgid "Sam"
+msgstr ""
+
+#: page-agenda.php:34
+msgid "Lundi"
+msgstr ""
+
+#: page-agenda.php:34
+msgid "Mardi"
+msgstr ""
+
+#: page-agenda.php:34
+msgid "Mercredi"
+msgstr ""
+
+#: page-agenda.php:34
+msgid "Jeudi"
+msgstr ""
+
+#: page-agenda.php:34
+msgid "Vendredi"
+msgstr ""
+
+#: page-agenda.php:34
+msgid "Samedi"
+msgstr ""
+
+#: page-agenda.php:34
+msgid "Dimanche"
+msgstr ""
+
+#: page-agenda.php:391
+msgid "Horaires des réunions et événements à venir."
+msgstr ""
+
+#: page-agenda.php:395
+msgid "Horaires et lieux des réunions"
+msgstr ""
+
+#: page-agenda.php:403
+msgid "à"
+msgstr ""
+
+#: page-agenda.php:413
+#, php-format
+msgid "Calendrier — %s"
+msgstr ""
+
+#: page-agenda.php:417
+msgid "Mois précédent"
+msgstr ""
+
+#: page-agenda.php:419
+msgid "Mois suivant"
+msgstr ""
+
+#: page-benevoles.php:527
+msgid "Notre équipe"
+msgstr ""
+
+#: page-benevoles.php:527
+msgid ""
+"Des bénévoles passionnés qui donnent de leur temps pour faire grandir les "
+"jeunes de notre communauté."
+msgstr ""
+
+#: page-benevoles.php:532
+msgid "Bénévoles actifs"
+msgstr ""
+
+#: page-benevoles.php:533
+msgid "Unités scoutes"
+msgstr ""
+
+#: page-benevoles.php:534
+msgid "Équipes"
+msgstr ""
+
+#: page-benevoles.php:535
+msgid "Jeunes encadrés"
+msgstr ""
+
+#: page-benevoles.php:682
+msgid "Autres"
+msgstr ""
+
+#: page-benevoles.php:716
+msgid "Aucun membre dans cette section pour le moment."
+msgstr ""
+
+#: page-benevoles.php:737
+msgid "Critique!"
+msgstr ""
+
+#: page-benevoles.php:741
+msgid "On a besoin de vous!"
+msgstr ""
+
+#: page-benevoles.php:742
+msgid "Voici les besoins actuels. Chaque coup de main fait une différence!"
+msgstr ""
+
+#: page-benevoles.php:778
+#, php-format
+msgid "%1$d place restante sur %2$s"
+msgid_plural "%1$d places restantes sur %2$s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: page-benevoles.php:786
+msgid "Bénévolat : "
+msgstr ""
+
+#: page-benevoles.php:786
+msgid "Je veux aider"
+msgstr ""
+
+#: page-benevoles.php:797
+msgid "Rejoignez notre équipe!"
+msgstr ""
+
+#: page-benevoles.php:798
+msgid ""
+"Nous recherchons toujours des bénévoles pour encadrer les activités de nos "
+"jeunes scouts."
+msgstr ""
+
+#: page-benevoles.php:800
+msgid "Animateur·rice"
+msgstr ""
+
+#: page-benevoles.php:801
+msgid "Aide-animateur·rice"
+msgstr ""
+
+#: page-benevoles.php:802
+msgid "Membre du CA"
+msgstr ""
+
+#: page-benevoles.php:803
+msgid "Soutien logistique"
+msgstr ""
+
+#: page-benevoles.php:804
+msgid "Cuisinier·ère de camp"
+msgstr ""
+
+#: page-benevoles.php:811
+msgid "Partagez cette page et aidez-nous à recruter!"
+msgstr ""
+
+#: page-benevoles.php:814
+msgid "Bénévoles recherchés"
+msgstr ""
+
+#: page-benevoles.php:816
+#, php-format
+msgid "Le %s recherche des bénévoles! Joignez-vous à notre équipe scoute."
+msgstr ""
+
+#: page-benevoles.php:835
+msgid "Copié!"
+msgstr ""
+
+#: page-benevoles.php:835
+msgid "Copier le lien"
+msgstr ""
+
+#: page-conditions.php:323
+msgid "Conditions régissant l'utilisation du site web."
+msgstr ""
+
+#: page-conditions.php:325 page-confidentialite.php:325
+msgid "Dernière mise à jour : Mars 2026"
+msgstr ""
+
+#: page-conditions.php:326
+msgid "1. Acceptation"
+msgstr ""
+
+#: page-conditions.php:326
+msgid ""
+"En accédant au site web du 5e Groupe scout Grand-Moulin, vous acceptez les "
+"présentes conditions."
+msgstr ""
+
+#: page-conditions.php:327
+msgid "2. Description du site"
+msgstr ""
+
+#: page-conditions.php:327
+msgid ""
+"Ce site fournit des informations sur les activités du 5e Groupe scout Grand-"
+"Moulin."
+msgstr ""
+
+#: page-conditions.php:328
+msgid "3. Propriété intellectuelle"
+msgstr ""
+
+#: page-conditions.php:328
+msgid ""
+"Le contenu du site est la propriété du 5e Groupe scout Grand-Moulin ou de "
+"ses partenaires. Le logo et la marque « Scouts du Canada » appartiennent à "
+"l'Association des Scouts du Canada (ASC). Toute utilisation doit respecter "
+"le guide d'image de marque de l'ASC."
+msgstr ""
+
+#: page-conditions.php:329
+msgid "4. Protection des renseignements"
+msgstr ""
+
+#: page-conditions.php:329
+#, php-format
+msgid ""
+"La collecte et l'utilisation de vos renseignements sont régies par notre <a "
+"href=\"%s\">politique de confidentialité</a>, conformément à la Loi 25."
+msgstr ""
+
+#: page-conditions.php:330
+msgid "5. Inscription et paiement"
+msgstr ""
+
+#: page-conditions.php:330
+msgid ""
+"L'inscription en ligne constitue un engagement. Frais de 160$ non "
+"remboursables après le 1er décembre."
+msgstr ""
+
+#: page-conditions.php:331
+msgid "6. Photos et vidéos"
+msgstr ""
+
+#: page-conditions.php:331
+#, php-format
+msgid ""
+"Les photos publiées respectent les autorisations obtenues des parents/"
+"tuteurs conformément aux exigences de la Loi 25 et aux politiques de l'ASC "
+"en matière de droit à l'image. Contact pour retrait : %s."
+msgstr ""
+
+#: page-conditions.php:332
+msgid "7. Limitation de responsabilité"
+msgstr ""
+
+#: page-conditions.php:332
+msgid ""
+"Informations fournies de bonne foi. Horaires et tarifs sujets à changement."
+msgstr ""
+
+#: page-conditions.php:333
+msgid "8. Liens externes"
+msgstr ""
+
+#: page-conditions.php:333
+msgid ""
+"Ce site contient des liens vers des sites tiers (Scouts du Canada, Google "
+"Maps). Nous ne sommes pas responsables de leur contenu."
+msgstr ""
+
+#: page-conditions.php:334
+msgid "9. Droit applicable"
+msgstr ""
+
+#: page-conditions.php:334
+msgid ""
+"Conditions régies par les lois du Québec et du Canada. Tribunal compétent : "
+"district judiciaire de Terrebonne."
+msgstr ""
+
+#: page-conditions.php:335
+msgid "10. Contact"
+msgstr ""
+
+#: page-confidentialite.php:323
+msgid "Conformément à la Loi 25 du Québec"
+msgstr ""
+
+#: page-confidentialite.php:326
+msgid "Protection des mineurs :"
+msgstr ""
+
+#: page-confidentialite.php:326
+msgid ""
+"Le 5e Groupe scout Grand-Moulin accueille des jeunes de 7 à 17 ans. Les "
+"renseignements personnels des enfants de moins de 14 ans sont considérés "
+"comme des renseignements sensibles. Le consentement d'un parent ou tuteur "
+"est obligatoire avant toute collecte."
+msgstr ""
+
+#: page-confidentialite.php:327
+msgid "1. Responsable de la protection des renseignements personnels"
+msgstr ""
+
+#: page-confidentialite.php:328
+msgid "Président"
+msgstr ""
+
+#: page-confidentialite.php:328
+msgid "5e Groupe scout Grand-Moulin"
+msgstr ""
+
+#: page-confidentialite.php:328
+msgid ""
+"Le responsable répond aux demandes d'accès, de rectification et de retrait "
+"de consentement dans un délai de 30 jours."
+msgstr ""
+
+#: page-confidentialite.php:329
+msgid "2. Renseignements personnels collectés"
+msgstr ""
+
+#: page-confidentialite.php:329
+msgid "Lors de l'inscription"
+msgstr ""
+
+#: page-confidentialite.php:329
+msgid "Nom et prénom de l'enfant et du parent/tuteur"
+msgstr ""
+
+#: page-confidentialite.php:329
+msgid "Date de naissance de l'enfant"
+msgstr ""
+
+#: page-confidentialite.php:329
+msgid "Adresse, courriel, numéro de téléphone"
+msgstr ""
+
+#: page-confidentialite.php:329
+msgid "Informations médicales pertinentes (allergies, conditions)"
+msgstr ""
+
+#: page-confidentialite.php:329
+msgid "Coordonnées du contact d'urgence"
+msgstr ""
+
+#: page-confidentialite.php:329
+msgid "Lors de la navigation"
+msgstr ""
+
+#: page-confidentialite.php:329
+msgid "Témoins (cookies) essentiels au fonctionnement du site"
+msgstr ""
+
+#: page-confidentialite.php:329
+msgid "Témoins analytiques (uniquement avec consentement explicite)"
+msgstr ""
+
+#: page-confidentialite.php:330
+msgid "3. Finalités de la collecte"
+msgstr ""
+
+#: page-confidentialite.php:330
+msgid "Gestion des inscriptions et des activités scoutes"
+msgstr ""
+
+#: page-confidentialite.php:330
+msgid "Communications avec les familles"
+msgstr ""
+
+#: page-confidentialite.php:330
+msgid "Sécurité des jeunes (fiches médicales, contacts d'urgence)"
+msgstr ""
+
+#: page-confidentialite.php:330
+msgid ""
+"Promotion du groupe (photos/vidéos — uniquement avec consentement séparé)"
+msgstr ""
+
+#: page-confidentialite.php:331
+msgid "4. Consentement"
+msgstr ""
+
+#: page-confidentialite.php:331
+msgid "Enfants de moins de 14 ans :"
+msgstr ""
+
+#: page-confidentialite.php:331
+msgid "Consentement du parent ou tuteur obligatoire."
+msgstr ""
+
+#: page-confidentialite.php:331
+msgid "Jeunes de 14 à 17 ans :"
+msgstr ""
+
+#: page-confidentialite.php:331
+msgid "Le jeune ou son parent/tuteur peut consentir."
+msgstr ""
+
+#: page-confidentialite.php:331
+msgid "Chaque finalité requiert un consentement distinct."
+msgstr ""
+
+#: page-confidentialite.php:331
+msgid "Le consentement photos est séparé et optionnel."
+msgstr ""
+
+#: page-confidentialite.php:331
+msgid "Aucune case n'est pré-cochée."
+msgstr ""
+
+#: page-confidentialite.php:332
+msgid "5. Partage des renseignements"
+msgstr ""
+
+#: page-confidentialite.php:332
+msgid ""
+"Partagés uniquement avec les animateurs du groupe, le District Les Ailes du "
+"Nord et l'ASC (aux fins d'affiliation). Aucun renseignement n'est vendu ou "
+"partagé à des fins commerciales."
+msgstr ""
+
+#: page-confidentialite.php:333
+msgid "6. Conservation et destruction"
+msgstr ""
+
+#: page-confidentialite.php:333
+msgid "Données conservées pour la durée de l'année scoute"
+msgstr ""
+
+#: page-confidentialite.php:333
+msgid "Fiches médicales détruites à la fin de chaque année"
+msgstr ""
+
+#: page-confidentialite.php:333
+msgid ""
+"Données d'inscription conservées max. 2 ans après la dernière inscription "
+"active"
+msgstr ""
+
+#: page-confidentialite.php:334
+msgid "7. Vos droits"
+msgstr ""
+
+#: page-confidentialite.php:334
+msgid "Accéder"
+msgstr ""
+
+#: page-confidentialite.php:334
+msgid "à vos renseignements"
+msgstr ""
+
+#: page-confidentialite.php:334
+msgid "Rectifier"
+msgstr ""
+
+#: page-confidentialite.php:334
+msgid "des informations inexactes"
+msgstr ""
+
+#: page-confidentialite.php:334
+msgid "Retirer votre consentement"
+msgstr ""
+
+#: page-confidentialite.php:334
+msgid "en tout temps"
+msgstr ""
+
+#: page-confidentialite.php:334
+msgid "Demander la cessation de diffusion"
+msgstr ""
+
+#: page-confidentialite.php:334
+msgid "de photos"
+msgstr ""
+
+#: page-confidentialite.php:334
+msgid "Demander la portabilité"
+msgstr ""
+
+#: page-confidentialite.php:334
+msgid "de vos données"
+msgstr ""
+
+#: page-confidentialite.php:334
+msgid "Délai de réponse : 30 jours."
+msgstr ""
+
+#: page-confidentialite.php:335
+msgid "8. Témoins (cookies)"
+msgstr ""
+
+#: page-confidentialite.php:335
+msgid ""
+"Témoins essentiels activés par défaut. Témoins analytiques activés "
+"uniquement après consentement explicite via la bannière de consentement."
+msgstr ""
+
+#: page-confidentialite.php:336
+msgid "9. Sécurité"
+msgstr ""
+
+#: page-confidentialite.php:336
+msgid ""
+"Connexion HTTPS, mots de passe forts, mises à jour régulières, accès limité "
+"aux personnes autorisées."
+msgstr ""
+
+#: page-confidentialite.php:337
+msgid "10. Incident de confidentialité"
+msgstr ""
+
+#: page-confidentialite.php:337
+msgid ""
+"En cas d'incident présentant un risque sérieux, notification à la CAI et aux "
+"personnes concernées dans les meilleurs délais."
+msgstr ""
+
+#: page-confidentialite.php:338
+msgid "11. Plaintes"
+msgstr ""
+
+#: page-confidentialite.php:338
+msgid "Adressez une plainte au responsable ci-dessus, ou directement à la :"
+msgstr ""
+
+#: page-confidentialite.php:339
+msgid "Commission d'accès à l'information du Québec (CAI)"
+msgstr ""
+
+#: page-famille.php:9
+msgid "Espace famille"
+msgstr ""
+
+#: page-famille.php:10
+msgid ""
+"Gérez les inscriptions de vos enfants, renouvelez ou inscrivez un nouveau "
+"membre."
+msgstr ""
+
+#: page-famille.php:18
+msgid "Le plugin d'inscription doit être activé."
+msgstr ""
+
+#: page-galerie.php:370
+msgid "Galerie photos"
+msgstr ""
+
+#: page-galerie.php:370
+msgid "Souvenirs de nos activités et aventures scoutes."
+msgstr ""
+
+#: page-galerie.php:375
+msgid "Toutes"
+msgstr ""
+
+#: page-galerie.php:378
+msgid "Chargement des photos..."
+msgstr ""
+
+#: page-galerie.php:382
+msgid ""
+"Aucune photo pour le moment.<br>Ajoutez des images dans <strong>Médias</"
+"strong> et assignez-les à un album."
+msgstr ""
+
+#: page-galerie.php:385
+msgid "Politique photos (Loi 25) :"
+msgstr ""
+
+#: page-galerie.php:385
+#, php-format
+msgid ""
+"Seuls les jeunes dont les parents ont fourni un consentement écrit "
+"apparaissent sur ces images. L'autorisation est distincte de l'inscription "
+"et son refus n'empêche pas la participation aux activités. Pour retirer une "
+"photo : %s."
+msgstr ""
+
+#: page-inscription.php:13
+msgid "Inscription 2025-2026"
+msgstr ""
+
+#: page-inscription.php:14
+msgid ""
+"Remplissez le formulaire ci-dessous pour inscrire votre enfant au 5e Groupe "
+"scout Grand-Moulin."
+msgstr ""
+
+#: page-inscription.php:25
+msgid "Plugin d'inscription requis"
+msgstr ""
+
+#: page-inscription.php:26
+msgid ""
+"Le plugin Scout Inscription doit être installé et activé pour afficher le "
+"formulaire."
+msgstr ""
+
+#: page-inscription.php:27
+msgid ""
+"Allez dans <strong>Extensions → Ajouter</strong> et téléversez le fichier "
+"<code>scout-inscription.zip</code>."
+msgstr ""
+
+#: page-unites.php:323
+msgid "Quatre branches adaptées à chaque étape du développement des jeunes."
+msgstr ""
+
+#: page-unites.php:325
+msgid "7 — 8 ans · Vendredi 18h45 à 20h45"
+msgstr ""
+
+#: page-unites.php:325
+msgid ""
+"Les Castors découvrent le scoutisme par le jeu, les activités en nature et "
+"les travaux manuels. Ils apprennent à vivre en petit groupe, à développer "
+"leur curiosité et à respecter leur environnement."
+msgstr ""
+
+#: page-unites.php:326
+msgid "9 — 11 ans · Mardi 18h45 à 20h45"
+msgstr ""
+
+#: page-unites.php:326
+msgid ""
+"Les Louveteaux vivent des aventures en « meute ». Inspirés du Livre de la "
+"Jungle, ils développent leur autonomie, leurs habiletés et leur sens de la "
+"communauté."
+msgstr ""
+
+#: page-unites.php:327
+msgid "12 — 14 ans · Dimanche 18h00 à 21h00"
+msgstr ""
+
+#: page-unites.php:327
+msgid ""
+"Les Éclaireurs travaillent en patrouilles autonomes. Ils planifient et "
+"réalisent des projets, développent leur leadership et vivent des défis de "
+"plein air plus ambitieux."
+msgstr ""
+
+#: page-unites.php:328
+msgid "14 — 17 ans · Horaire à déterminer"
+msgstr ""
+
+#: page-unites.php:328
+msgid ""
+"Les Pionniers sont les aînés du groupe. Ils vivent le scoutisme avec une "
+"grande autonomie : engagement communautaire, expéditions et projets de "
+"service."
+msgstr ""

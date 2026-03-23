@@ -9,6 +9,7 @@ require_once get_template_directory() . '/blocks/scout-bubble-block/register.php
 
 // ── SETUP ──
 function scout_gm_setup() {
+    load_theme_textdomain('scout-gm', get_template_directory() . '/languages');
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     add_theme_support('html5', ['search-form','comment-form','comment-list','gallery','caption','style','script']);
@@ -39,7 +40,7 @@ add_action('wp_enqueue_scripts','scout_gm_enqueue');
 
 // ── WIDGETS ──
 function scout_gm_widgets() {
-    register_sidebar(['name'=>'Pied de page','id'=>'footer-1','before_widget'=>'<div class="footer-widget">','after_widget'=>'</div>','before_title'=>'<h4>','after_title'=>'</h4>']);
+    register_sidebar(['name'=>__('Pied de page','scout-gm'),'id'=>'footer-1','before_widget'=>'<div class="footer-widget">','after_widget'=>'</div>','before_title'=>'<h4>','after_title'=>'</h4>']);
 }
 add_action('widgets_init','scout_gm_widgets');
 
@@ -75,9 +76,9 @@ function scout_gm_customize($wp_customize) {
     $wp_customize->add_section('scout_gm_contact',['title'=>__('Coordonnées du groupe','scout-gm'),'priority'=>30]);
 
     $fields = [
-        'scout_gm_email'   => ['Courriel','info@5escoutgrandmoulin.org','sanitize_email'],
-        'scout_gm_phone'   => ['Téléphone','514-730-3398','sanitize_text_field'],
-        'scout_gm_privacy' => ['Responsable vie privée (Loi 25)','Jean Côté','sanitize_text_field'],
+        'scout_gm_email'   => [__('Courriel','scout-gm'),'info@5escoutgrandmoulin.org','sanitize_email'],
+        'scout_gm_phone'   => [__('Téléphone','scout-gm'),'514-730-3398','sanitize_text_field'],
+        'scout_gm_privacy' => [__('Responsable vie privée (Loi 25)','scout-gm'),'Jean Côté','sanitize_text_field'],
     ];
     foreach ($fields as $key => [$label,$default,$sanitize]) {
         $wp_customize->add_setting($key,['default'=>$default,'sanitize_callback'=>$sanitize]);
@@ -100,12 +101,12 @@ function scout_gm_galerie_setup() {
     // Register "Album" taxonomy
     register_taxonomy('scout_album', 'attachment', [
         'labels' => [
-            'name' => 'Albums photo',
-            'singular_name' => 'Album',
-            'add_new_item' => 'Ajouter un album',
-            'edit_item' => 'Modifier l\'album',
-            'search_items' => 'Chercher un album',
-            'all_items' => 'Tous les albums',
+            'name' => __('Albums photo', 'scout-gm'),
+            'singular_name' => __('Album', 'scout-gm'),
+            'add_new_item' => __('Ajouter un album', 'scout-gm'),
+            'edit_item' => __('Modifier l\'album', 'scout-gm'),
+            'search_items' => __('Chercher un album', 'scout-gm'),
+            'all_items' => __('Tous les albums', 'scout-gm'),
         ],
         'public' => true,
         'show_ui' => true,
@@ -130,14 +131,14 @@ function scout_gm_attachment_fields($form_fields, $post) {
     $terms = get_terms(['taxonomy' => 'scout_album', 'hide_empty' => false]);
     $current = wp_get_object_terms($post->ID, 'scout_album', ['fields' => 'ids']);
     
-    $options = '<option value="">— Aucun album —</option>';
+    $options = '<option value="">' . esc_html__('— Aucun album —', 'scout-gm') . '</option>';
     foreach ($terms as $term) {
         $sel = in_array($term->term_id, $current) ? ' selected' : '';
         $options .= '<option value="' . $term->term_id . '"' . $sel . '>' . esc_html($term->name) . '</option>';
     }
     
     $form_fields['scout_album'] = [
-        'label' => 'Album photo',
+        'label' => __('Album photo', 'scout-gm'),
         'input' => 'html',
         'html'  => '<select name="attachments[' . $post->ID . '][scout_album]">' . $options . '</select>',
     ];
@@ -221,13 +222,13 @@ add_action('rest_api_init', 'scout_gm_galerie_api');
 function scout_gm_events_setup() {
     register_post_type('scout_event', [
         'labels' => [
-            'name' => 'Événements',
-            'singular_name' => 'Événement',
-            'add_new' => 'Ajouter un événement',
-            'add_new_item' => 'Ajouter un événement',
-            'edit_item' => 'Modifier l\'événement',
-            'all_items' => 'Tous les événements',
-            'search_items' => 'Chercher un événement',
+            'name' => __('Événements', 'scout-gm'),
+            'singular_name' => __('Événement', 'scout-gm'),
+            'add_new' => __('Ajouter un événement', 'scout-gm'),
+            'add_new_item' => __('Ajouter un événement', 'scout-gm'),
+            'edit_item' => __('Modifier l\'événement', 'scout-gm'),
+            'all_items' => __('Tous les événements', 'scout-gm'),
+            'search_items' => __('Chercher un événement', 'scout-gm'),
         ],
         'public' => true,
         'show_in_rest' => true,
@@ -241,7 +242,7 @@ add_action('init', 'scout_gm_events_setup');
 
 // Meta boxes for event fields
 function scout_gm_event_meta_boxes() {
-    add_meta_box('scout_event_details', 'Détails de l\'événement', 'scout_gm_event_meta_render', 'scout_event', 'normal', 'high');
+    add_meta_box('scout_event_details', __('Détails de l\'événement', 'scout-gm'), 'scout_gm_event_meta_render', 'scout_event', 'normal', 'high');
 }
 add_action('add_meta_boxes', 'scout_gm_event_meta_boxes');
 
@@ -259,41 +260,47 @@ function scout_gm_event_meta_render($post) {
     ?>
     <style>.scout-evt-table td{padding:6px 0}.scout-evt-table input,.scout-evt-table select{padding:6px}</style>
     <table class="scout-evt-table" style="width:100%">
-    <tr><td style="width:160px"><strong>📅 Date de début *</strong></td><td><input type="date" name="event_date" value="<?php echo esc_attr($date); ?>" required style="width:200px"></td></tr>
-    <tr><td><strong>📅 Date de fin</strong></td><td><input type="date" name="event_date_end" value="<?php echo esc_attr($date_end); ?>" style="width:200px"> <span class="description">Laisser vide pour un événement d'une journée</span></td></tr>
-    <tr><td><strong>🕐 Heure début</strong></td><td><input type="time" name="event_time_start" value="<?php echo esc_attr($time_start); ?>" style="width:140px"></td></tr>
-    <tr><td><strong>🕐 Heure fin</strong></td><td><input type="time" name="event_time_end" value="<?php echo esc_attr($time_end); ?>" style="width:140px"></td></tr>
-    <tr><td><strong>📍 Lieu</strong></td><td><input type="text" name="event_location" value="<?php echo esc_attr($location); ?>" style="width:100%" placeholder="Ex: École Les Mésanges"></td></tr>
-    <tr><td><strong>🏷️ Unité / Type</strong></td><td>
+    <tr><td style="width:160px"><strong><?php echo '📅 ' . esc_html__('Date de début *', 'scout-gm'); ?></strong></td><td><input type="date" name="event_date" value="<?php echo esc_attr($date); ?>" required style="width:200px"></td></tr>
+    <tr><td><strong><?php echo '📅 ' . esc_html__('Date de fin', 'scout-gm'); ?></strong></td><td><input type="date" name="event_date_end" value="<?php echo esc_attr($date_end); ?>" style="width:200px"> <span class="description"><?php esc_html_e('Laisser vide pour un événement d\'une journée', 'scout-gm'); ?></span></td></tr>
+    <tr><td><strong><?php echo '🕐 ' . esc_html__('Heure début', 'scout-gm'); ?></strong></td><td><input type="time" name="event_time_start" value="<?php echo esc_attr($time_start); ?>" style="width:140px"></td></tr>
+    <tr><td><strong><?php echo '🕐 ' . esc_html__('Heure fin', 'scout-gm'); ?></strong></td><td><input type="time" name="event_time_end" value="<?php echo esc_attr($time_end); ?>" style="width:140px"></td></tr>
+    <tr><td><strong><?php echo '📍 ' . esc_html__('Lieu', 'scout-gm'); ?></strong></td><td><input type="text" name="event_location" value="<?php echo esc_attr($location); ?>" style="width:100%" placeholder="<?php esc_attr_e('Ex: École Les Mésanges', 'scout-gm'); ?>"></td></tr>
+    <tr><td><strong><?php echo '🏷️ ' . esc_html__('Unité / Type', 'scout-gm'); ?></strong></td><td>
         <select name="event_unit" style="width:200px">
-            <option value="special" <?php selected($unit, 'special'); ?>>🌟 Événement spécial</option>
-            <option value="castor" <?php selected($unit, 'castor'); ?>>🦫 Castors</option>
-            <option value="louveteau" <?php selected($unit, 'louveteau'); ?>>🐺 Louveteaux</option>
-            <option value="eclaireur" <?php selected($unit, 'eclaireur'); ?>>🧭 Éclaireurs</option>
-            <option value="pionnier" <?php selected($unit, 'pionnier'); ?>>⚜ Pionniers</option>
-            <option value="groupe" <?php selected($unit, 'groupe'); ?>>👥 Tout le groupe</option>
+            <option value="special" <?php selected($unit, 'special'); ?>><?php echo '🌟 ' . esc_html__('Événement spécial', 'scout-gm'); ?></option>
+            <option value="castor" <?php selected($unit, 'castor'); ?>><?php echo '🦫 ' . esc_html__('Castors', 'scout-gm'); ?></option>
+            <option value="louveteau" <?php selected($unit, 'louveteau'); ?>><?php echo '🐺 ' . esc_html__('Louveteaux', 'scout-gm'); ?></option>
+            <option value="eclaireur" <?php selected($unit, 'eclaireur'); ?>><?php echo '🧭 ' . esc_html__('Éclaireurs', 'scout-gm'); ?></option>
+            <option value="pionnier" <?php selected($unit, 'pionnier'); ?>><?php echo '⚜ ' . esc_html__('Pionniers', 'scout-gm'); ?></option>
+            <option value="groupe" <?php selected($unit, 'groupe'); ?>><?php echo '👥 ' . esc_html__('Tout le groupe', 'scout-gm'); ?></option>
         </select>
     </td></tr>
     </table>
 
     <hr style="margin:16px 0">
-    <h3 style="margin:0 0 8px">🔁 Récurrence</h3>
+    <h3 style="margin:0 0 8px"><?php echo '🔁 ' . esc_html__('Récurrence', 'scout-gm'); ?></h3>
     <table class="scout-evt-table" style="width:100%">
-    <tr><td style="width:160px"><strong>Répéter</strong></td><td>
+    <tr><td style="width:160px"><strong><?php esc_html_e('Répéter', 'scout-gm'); ?></strong></td><td>
         <select name="event_recurrence" id="eventRecurrence" style="width:200px" onchange="document.getElementById('recurrenceOpts').style.display=this.value==='none'?'none':'table-row-group'">
-            <option value="none" <?php selected($recurrence, 'none'); ?>>Ne pas répéter</option>
-            <option value="weekly" <?php selected($recurrence, 'weekly'); ?>>Chaque semaine</option>
-            <option value="biweekly" <?php selected($recurrence, 'biweekly'); ?>>Aux deux semaines</option>
-            <option value="monthly" <?php selected($recurrence, 'monthly'); ?>>Chaque mois (même jour du mois)</option>
+            <option value="none" <?php selected($recurrence, 'none'); ?>><?php esc_html_e('Ne pas répéter', 'scout-gm'); ?></option>
+            <option value="weekly" <?php selected($recurrence, 'weekly'); ?>><?php esc_html_e('Chaque semaine', 'scout-gm'); ?></option>
+            <option value="biweekly" <?php selected($recurrence, 'biweekly'); ?>><?php esc_html_e('Aux deux semaines', 'scout-gm'); ?></option>
+            <option value="monthly" <?php selected($recurrence, 'monthly'); ?>><?php esc_html_e('Chaque mois (même jour du mois)', 'scout-gm'); ?></option>
         </select>
     </td></tr>
     <tbody id="recurrenceOpts" style="<?php echo $recurrence === 'none' ? 'display:none' : ''; ?>">
-    <tr><td><strong>Répéter jusqu'au</strong></td><td><input type="date" name="event_recurrence_end" value="<?php echo esc_attr($recurrence_end); ?>" style="width:200px"> <span class="description">Date de fin de la récurrence</span></td></tr>
-    <tr><td><strong>Exceptions</strong></td><td><input type="text" name="event_recurrence_exceptions" value="<?php echo esc_attr($recurrence_exceptions); ?>" style="width:100%" placeholder="2026-03-14, 2026-04-18"> <span class="description">Dates à exclure (séparées par des virgules, format AAAA-MM-JJ)</span></td></tr>
+    <tr><td><strong><?php esc_html_e('Répéter jusqu\'au', 'scout-gm'); ?></strong></td><td><input type="date" name="event_recurrence_end" value="<?php echo esc_attr($recurrence_end); ?>" style="width:200px"> <span class="description"><?php esc_html_e('Date de fin de la récurrence', 'scout-gm'); ?></span></td></tr>
+    <tr><td><strong><?php esc_html_e('Exceptions', 'scout-gm'); ?></strong></td><td><input type="text" name="event_recurrence_exceptions" value="<?php echo esc_attr($recurrence_exceptions); ?>" style="width:100%" placeholder="2026-03-14, 2026-04-18"> <span class="description"><?php esc_html_e('Dates à exclure (séparées par des virgules, format AAAA-MM-JJ)', 'scout-gm'); ?></span></td></tr>
     </tbody>
     </table>
-    <p class="description" style="margin-top:8px">💡 <strong>Multi-jours :</strong> Remplissez la date de fin pour les camps et sorties. L'événement apparaîtra sur chaque jour entre les deux dates.<br>
-    💡 <strong>Récurrence :</strong> Utilisez la récurrence pour des activités régulières (ex: entraînement chaque lundi). Les exceptions permettent de sauter des dates spécifiques (vacances, congés).</p>
+    <p class="description" style="margin-top:8px"><?php printf(
+        /* translators: %1$s and %2$s are bold labels */
+        '💡 <strong>%1$s</strong> %2$s<br>💡 <strong>%3$s</strong> %4$s',
+        esc_html__('Multi-jours :', 'scout-gm'),
+        esc_html__('Remplissez la date de fin pour les camps et sorties. L\'événement apparaîtra sur chaque jour entre les deux dates.', 'scout-gm'),
+        esc_html__('Récurrence :', 'scout-gm'),
+        esc_html__('Utilisez la récurrence pour des activités régulières (ex: entraînement chaque lundi). Les exceptions permettent de sauter des dates spécifiques (vacances, congés).', 'scout-gm')
+    ); ?></p>
     <?php
 }
 
@@ -323,13 +330,13 @@ add_action('save_post_scout_event', 'scout_gm_event_meta_save');
 function scout_gm_volunteer_setup() {
     register_post_type('scout_volunteer', [
         'labels' => [
-            'name' => 'Appels aux bénévoles',
-            'singular_name' => 'Appel',
-            'add_new' => 'Ajouter un appel',
-            'add_new_item' => 'Nouvel appel aux bénévoles',
-            'edit_item' => 'Modifier l\'appel',
-            'all_items' => 'Tous les appels',
-            'search_items' => 'Chercher un appel',
+            'name' => __('Appels aux bénévoles', 'scout-gm'),
+            'singular_name' => __('Appel', 'scout-gm'),
+            'add_new' => __('Ajouter un appel', 'scout-gm'),
+            'add_new_item' => __('Nouvel appel aux bénévoles', 'scout-gm'),
+            'edit_item' => __('Modifier l\'appel', 'scout-gm'),
+            'all_items' => __('Tous les appels', 'scout-gm'),
+            'search_items' => __('Chercher un appel', 'scout-gm'),
         ],
         'public' => true,
         'show_in_rest' => true,
@@ -342,7 +349,7 @@ function scout_gm_volunteer_setup() {
 add_action('init', 'scout_gm_volunteer_setup');
 
 function scout_gm_volunteer_meta_boxes() {
-    add_meta_box('scout_volunteer_details', 'Détails de l\'appel', 'scout_gm_volunteer_meta_render', 'scout_volunteer', 'normal', 'high');
+    add_meta_box('scout_volunteer_details', __('Détails de l\'appel', 'scout-gm'), 'scout_gm_volunteer_meta_render', 'scout_volunteer', 'normal', 'high');
 }
 add_action('add_meta_boxes', 'scout_gm_volunteer_meta_boxes');
 
@@ -358,43 +365,43 @@ function scout_gm_volunteer_meta_render($post) {
     $contact_email = get_post_meta($post->ID, '_vol_contact', true);
     ?>
     <table style="width:100%">
-    <tr><td style="width:160px"><strong>📁 Catégorie</strong></td><td>
+    <tr><td style="width:160px"><strong><?php echo '📁 ' . esc_html__('Catégorie', 'scout-gm'); ?></strong></td><td>
         <select name="vol_category" style="width:200px">
-            <option value="cuisine" <?php selected($category, 'cuisine'); ?>>🍳 Cuisine / Camp</option>
-            <option value="aide_camp" <?php selected($category, 'aide_camp'); ?>>⛺ Aide au camp</option>
-            <option value="transport" <?php selected($category, 'transport'); ?>>🚗 Transport</option>
-            <option value="animation" <?php selected($category, 'animation'); ?>>🎪 Animation</option>
-            <option value="logistique" <?php selected($category, 'logistique'); ?>>📦 Logistique</option>
-            <option value="evenement" <?php selected($category, 'evenement'); ?>>🎉 Événement spécial</option>
-            <option value="formation" <?php selected($category, 'formation'); ?>>📚 Formation</option>
-            <option value="general" <?php selected($category, 'general'); ?>>🤝 Aide générale</option>
+            <option value="cuisine" <?php selected($category, 'cuisine'); ?>><?php echo '🍳 ' . esc_html__('Cuisine / Camp', 'scout-gm'); ?></option>
+            <option value="aide_camp" <?php selected($category, 'aide_camp'); ?>><?php echo '⛺ ' . esc_html__('Aide au camp', 'scout-gm'); ?></option>
+            <option value="transport" <?php selected($category, 'transport'); ?>><?php echo '🚗 ' . esc_html__('Transport', 'scout-gm'); ?></option>
+            <option value="animation" <?php selected($category, 'animation'); ?>><?php echo '🎪 ' . esc_html__('Animation', 'scout-gm'); ?></option>
+            <option value="logistique" <?php selected($category, 'logistique'); ?>><?php echo '📦 ' . esc_html__('Logistique', 'scout-gm'); ?></option>
+            <option value="evenement" <?php selected($category, 'evenement'); ?>><?php echo '🎉 ' . esc_html__('Événement spécial', 'scout-gm'); ?></option>
+            <option value="formation" <?php selected($category, 'formation'); ?>><?php echo '📚 ' . esc_html__('Formation', 'scout-gm'); ?></option>
+            <option value="general" <?php selected($category, 'general'); ?>><?php echo '🤝 ' . esc_html__('Aide générale', 'scout-gm'); ?></option>
         </select>
     </td></tr>
-    <tr><td><strong>🔥 Urgence</strong></td><td>
+    <tr><td><strong><?php echo '🔥 ' . esc_html__('Urgence', 'scout-gm'); ?></strong></td><td>
         <select name="vol_urgency" style="width:200px">
-            <option value="low" <?php selected($urgency, 'low'); ?>>🟢 Faible — on a le temps</option>
-            <option value="normal" <?php selected($urgency, 'normal'); ?>>🟡 Normal</option>
-            <option value="high" <?php selected($urgency, 'high'); ?>>🟠 Urgent</option>
-            <option value="critical" <?php selected($urgency, 'critical'); ?>>🔴 Critique — besoin immédiat!</option>
+            <option value="low" <?php selected($urgency, 'low'); ?>><?php echo '🟢 ' . esc_html__('Faible — on a le temps', 'scout-gm'); ?></option>
+            <option value="normal" <?php selected($urgency, 'normal'); ?>><?php echo '🟡 ' . esc_html__('Normal', 'scout-gm'); ?></option>
+            <option value="high" <?php selected($urgency, 'high'); ?>><?php echo '🟠 ' . esc_html__('Urgent', 'scout-gm'); ?></option>
+            <option value="critical" <?php selected($urgency, 'critical'); ?>><?php echo '🔴 ' . esc_html__('Critique — besoin immédiat!', 'scout-gm'); ?></option>
         </select>
     </td></tr>
-    <tr><td><strong>👥 Places disponibles</strong></td><td>
+    <tr><td><strong><?php echo '👥 ' . esc_html__('Places disponibles', 'scout-gm'); ?></strong></td><td>
         <input type="number" name="vol_spots" value="<?php echo esc_attr($spots); ?>" min="0" style="width:80px" placeholder="∞">
-        <span class="description">Laisser vide = illimité</span>
+        <span class="description"><?php esc_html_e('Laisser vide = illimité', 'scout-gm'); ?></span>
     </td></tr>
-    <tr><td><strong>✅ Places comblées</strong></td><td>
+    <tr><td><strong><?php echo '✅ ' . esc_html__('Places comblées', 'scout-gm'); ?></strong></td><td>
         <input type="number" name="vol_filled" value="<?php echo esc_attr($filled); ?>" min="0" style="width:80px">
     </td></tr>
-    <tr><td><strong>📅 Date de l'activité</strong></td><td>
+    <tr><td><strong><?php echo '📅 ' . esc_html__('Date de l\'activité', 'scout-gm'); ?></strong></td><td>
         <input type="date" name="vol_date" value="<?php echo esc_attr($date_event); ?>" style="width:200px">
         <input type="date" name="vol_date_end" value="<?php echo esc_attr($date_end); ?>" style="width:200px">
-        <span class="description">Début — Fin (optionnel)</span>
+        <span class="description"><?php esc_html_e('Début — Fin (optionnel)', 'scout-gm'); ?></span>
     </td></tr>
-    <tr><td><strong>📍 Lieu</strong></td><td>
-        <input type="text" name="vol_location" value="<?php echo esc_attr($location); ?>" style="width:100%" placeholder="Ex: Camp Tamaracouta, École Les Mésanges">
+    <tr><td><strong><?php echo '📍 ' . esc_html__('Lieu', 'scout-gm'); ?></strong></td><td>
+        <input type="text" name="vol_location" value="<?php echo esc_attr($location); ?>" style="width:100%" placeholder="<?php esc_attr_e('Ex: Camp Tamaracouta, École Les Mésanges', 'scout-gm'); ?>">
     </td></tr>
-    <tr><td><strong>✉️ Courriel de contact</strong></td><td>
-        <input type="email" name="vol_contact" value="<?php echo esc_attr($contact_email); ?>" style="width:100%" placeholder="Laisser vide = courriel du groupe">
+    <tr><td><strong><?php echo '✉️ ' . esc_html__('Courriel de contact', 'scout-gm'); ?></strong></td><td>
+        <input type="email" name="vol_contact" value="<?php echo esc_attr($contact_email); ?>" style="width:100%" placeholder="<?php esc_attr_e('Laisser vide = courriel du groupe', 'scout-gm'); ?>">
     </td></tr>
     </table>
     <?php
@@ -430,8 +437,8 @@ function scout_gm_get_volunteer_opportunities() {
 // ── RECURRING SCHEDULE (Customizer) ──
 function scout_gm_schedule_customize($wp_customize) {
     $wp_customize->add_section('scout_gm_schedule', [
-        'title' => 'Horaires récurrents',
-        'description' => 'Définir les réunions récurrentes par unité. Format: jour de la semaine (1=lundi, 5=vendredi, 7=dimanche).',
+        'title' => __('Horaires récurrents', 'scout-gm'),
+        'description' => __('Définir les réunions récurrentes par unité. Format: jour de la semaine (1=lundi, 5=vendredi, 7=dimanche).', 'scout-gm'),
         'priority' => 35,
     ]);
     $units = [

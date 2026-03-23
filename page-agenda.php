@@ -13,8 +13,8 @@ if ($req_month > 12) { $req_month = 1; $req_year++; }
 
 $events = function_exists('scout_gm_get_month_events') ? scout_gm_get_month_events($req_year, $req_month) : [];
 
-$month_names = ['', 'Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
-$day_names = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
+$month_names = ['', __('Janvier','scout-gm'),__('Février','scout-gm'),__('Mars','scout-gm'),__('Avril','scout-gm'),__('Mai','scout-gm'),__('Juin','scout-gm'),__('Juillet','scout-gm'),__('Août','scout-gm'),__('Septembre','scout-gm'),__('Octobre','scout-gm'),__('Novembre','scout-gm'),__('Décembre','scout-gm')];
+$day_names = [__('Dim','scout-gm'),__('Lun','scout-gm'),__('Mar','scout-gm'),__('Mer','scout-gm'),__('Jeu','scout-gm'),__('Ven','scout-gm'),__('Sam','scout-gm')];
 
 $first_dow = intval(date('w', mktime(0,0,0,$req_month,1,$req_year))); // 0=Sun
 $days_in_month = intval(date('t', mktime(0,0,0,$req_month,1,$req_year)));
@@ -31,7 +31,7 @@ $schedule_units = [
     'eclaireur' => ['label' => 'Éclaireurs', 'emoji' => '🧭', 'badge' => 'https://scoutsducanada.ca/content/uploads/2023/08/badge_eclaireur.png'],
     'pionnier' => ['label' => 'Pionniers', 'emoji' => '⚜', 'badge' => 'https://scoutsducanada.ca/content/uploads/2023/08/badge_pionnier.png'],
 ];
-$day_labels = [0 => '', 1 => 'Lundi', 2 => 'Mardi', 3 => 'Mercredi', 4 => 'Jeudi', 5 => 'Vendredi', 6 => 'Samedi', 7 => 'Dimanche'];
+$day_labels = [0 => '', 1 => __('Lundi','scout-gm'), 2 => __('Mardi','scout-gm'), 3 => __('Mercredi','scout-gm'), 4 => __('Jeudi','scout-gm'), 5 => __('Vendredi','scout-gm'), 6 => __('Samedi','scout-gm'), 7 => __('Dimanche','scout-gm')];
 ?>
 
 <style>
@@ -388,11 +388,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 </style>
 
-<div class="page-hero"><h1>Agenda</h1><p>Horaires des réunions et événements à venir.</p></div>
+<div class="page-hero"><h1><?php esc_html_e('Agenda', 'scout-gm'); ?></h1><p><?php esc_html_e('Horaires des réunions et événements à venir.', 'scout-gm'); ?></p></div>
 
 <section><div class="container">
 
-<h2 style="font-size:1.6rem;color:#007748;margin-bottom:24px;font-weight:700">Horaires et lieux des réunions</h2>
+<h2 style="font-size:1.6rem;color:#007748;margin-bottom:24px;font-weight:700"><?php esc_html_e('Horaires et lieux des réunions', 'scout-gm'); ?></h2>
 <div class="schedule-cards">
 <?php foreach ($schedule_units as $key => $info):
     $day = intval(get_theme_mod("scout_schedule_{$key}_day", 0));
@@ -400,7 +400,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     $start = get_theme_mod("scout_schedule_{$key}_start", '');
     $end = get_theme_mod("scout_schedule_{$key}_end", '');
     $loc = get_theme_mod("scout_schedule_{$key}_location", '');
-    $time_str = $start ? ($start . ($end ? ' à ' . $end : '')) : 'À déterminer';
+    $time_str = $start ? ($start . ($end ? ' ' . __('à', 'scout-gm') . ' ' . $end : '')) : __('À déterminer', 'scout-gm');
 ?>
 <div class="schedule-card">
   <h4><img src="<?php echo esc_url($info['badge']); ?>" alt="" style="width:24px;height:24px;vertical-align:middle;margin-right:4px"> <?php echo esc_html($info['label']); ?></h4>
@@ -410,13 +410,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 <?php endforeach; ?>
 </div>
 
-<h2 style="font-size:1.6rem;color:#007748;margin:48px 0 24px;font-weight:700">Calendrier — <?php echo $month_names[$req_month] . ' ' . $req_year; ?></h2>
+<h2 style="font-size:1.6rem;color:#007748;margin:48px 0 24px;font-weight:700"><?php /* translators: %s: month and year */ printf(esc_html__('Calendrier — %s', 'scout-gm'), $month_names[$req_month] . ' ' . $req_year); ?></h2>
 
 <div class="calendar-wrapper">
   <div class="calendar-header">
-    <div class="calendar-nav"><a href="?cal_m=<?php echo $prev_m; ?>&cal_y=<?php echo $prev_y; ?>" aria-label="Mois précédent">← <?php echo $month_names[$prev_m]; ?></a></div>
+    <div class="calendar-nav"><a href="?cal_m=<?php echo $prev_m; ?>&cal_y=<?php echo $prev_y; ?>" aria-label="<?php esc_attr_e('Mois précédent', 'scout-gm'); ?>">← <?php echo esc_html($month_names[$prev_m]); ?></a></div>
     <h3><?php echo $month_names[$req_month] . ' ' . $req_year; ?></h3>
-    <div class="calendar-nav"><a href="?cal_m=<?php echo $next_m; ?>&cal_y=<?php echo $next_y; ?>" aria-label="Mois suivant"><?php echo $month_names[$next_m]; ?> →</a></div>
+    <div class="calendar-nav"><a href="?cal_m=<?php echo $next_m; ?>&cal_y=<?php echo $next_y; ?>" aria-label="<?php esc_attr_e('Mois suivant', 'scout-gm'); ?>"><?php echo esc_html($month_names[$next_m]); ?> →</a></div>
   </div>
   <div class="calendar-grid">
     <?php foreach ($day_names as $dn): ?>

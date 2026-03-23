@@ -320,19 +320,19 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 </style>
 
-<div class="page-hero"><h1>Conditions d'utilisation</h1><p>Conditions régissant l'utilisation du site web.</p></div>
+<div class="page-hero"><h1><?php esc_html_e('Conditions d\'utilisation', 'scout-gm'); ?></h1><p><?php esc_html_e('Conditions régissant l\'utilisation du site web.', 'scout-gm'); ?></p></div>
 <section><div class="legal-content">
-<p><em>Dernière mise à jour : Mars 2026</em></p>
-<h2>1. Acceptation</h2><p>En accédant au site web du 5e Groupe scout Grand-Moulin, vous acceptez les présentes conditions.</p>
-<h2>2. Description du site</h2><p>Ce site fournit des informations sur les activités du 5e Groupe scout Grand-Moulin.</p>
-<h2>3. Propriété intellectuelle</h2><p>Le contenu du site est la propriété du 5e Groupe scout Grand-Moulin ou de ses partenaires. Le logo et la marque « Scouts du Canada » appartiennent à l'Association des Scouts du Canada (ASC). Toute utilisation doit respecter le guide d'image de marque de l'ASC.</p>
-<h2>4. Protection des renseignements</h2><p>La collecte et l'utilisation de vos renseignements sont régies par notre <a href="confidentialite.html">politique de confidentialité</a>, conformément à la Loi 25.</p>
-<h2>5. Inscription et paiement</h2><p>L'inscription en ligne constitue un engagement. Frais de 160$ non remboursables après le 1er décembre.</p>
-<h2>6. Photos et vidéos</h2><p>Les photos publiées respectent les autorisations obtenues des parents/tuteurs conformément aux exigences de la Loi 25 et aux politiques de l'ASC en matière de droit à l'image. Contact pour retrait : <a href="/cdn-cgi/l/email-protection#c8a1a6aea788fdadbbaba7bdbcafbaa9a6aca5a7bda4a1a6e6a7baaf"><span class="__cf_email__" data-cfemail="670e090108275202140408121300150609030a08120b0e0949081500">[email&#160;protected]</span></a>.</p>
-<h2>7. Limitation de responsabilité</h2><p>Informations fournies de bonne foi. Horaires et tarifs sujets à changement.</p>
-<h2>8. Liens externes</h2><p>Ce site contient des liens vers des sites tiers (Scouts du Canada, Google Maps). Nous ne sommes pas responsables de leur contenu.</p>
-<h2>9. Droit applicable</h2><p>Conditions régies par les lois du Québec et du Canada. Tribunal compétent : district judiciaire de Terrebonne.</p>
-<h2>10. Contact</h2><p><a href="/cdn-cgi/l/email-protection#c4adaaa2ab84f1a1b7a7abb1b0a3b6a5aaa0a9abb1a8adaaeaabb6a3"><span class="__cf_email__" data-cfemail="89e0e7efe6c9bcecfaeae6fcfdeefbe8e7ede4e6fce5e0e7a7e6fbee">[email&#160;protected]</span></a></p>
+<p><em><?php esc_html_e('Dernière mise à jour : Mars 2026', 'scout-gm'); ?></em></p>
+<h2><?php esc_html_e('1. Acceptation', 'scout-gm'); ?></h2><p><?php esc_html_e('En accédant au site web du 5e Groupe scout Grand-Moulin, vous acceptez les présentes conditions.', 'scout-gm'); ?></p>
+<h2><?php esc_html_e('2. Description du site', 'scout-gm'); ?></h2><p><?php esc_html_e('Ce site fournit des informations sur les activités du 5e Groupe scout Grand-Moulin.', 'scout-gm'); ?></p>
+<h2><?php esc_html_e('3. Propriété intellectuelle', 'scout-gm'); ?></h2><p><?php esc_html_e('Le contenu du site est la propriété du 5e Groupe scout Grand-Moulin ou de ses partenaires. Le logo et la marque « Scouts du Canada » appartiennent à l\'Association des Scouts du Canada (ASC). Toute utilisation doit respecter le guide d\'image de marque de l\'ASC.', 'scout-gm'); ?></p>
+<h2><?php esc_html_e('4. Protection des renseignements', 'scout-gm'); ?></h2><p><?php printf(__('La collecte et l\'utilisation de vos renseignements sont régies par notre <a href="%s">politique de confidentialité</a>, conformément à la Loi 25.', 'scout-gm'), esc_url(home_url('/confidentialite/'))); ?></p>
+<h2><?php esc_html_e('5. Inscription et paiement', 'scout-gm'); ?></h2><p><?php esc_html_e('L\'inscription en ligne constitue un engagement. Frais de 160$ non remboursables après le 1er décembre.', 'scout-gm'); ?></p>
+<h2><?php esc_html_e('6. Photos et vidéos', 'scout-gm'); ?></h2><p><?php printf(__('Les photos publiées respectent les autorisations obtenues des parents/tuteurs conformément aux exigences de la Loi 25 et aux politiques de l\'ASC en matière de droit à l\'image. Contact pour retrait : %s.', 'scout-gm'), '<a href="mailto:' . esc_attr(scout_gm_email()) . '">' . esc_html(scout_gm_email()) . '</a>'); ?></p>
+<h2><?php esc_html_e('7. Limitation de responsabilité', 'scout-gm'); ?></h2><p><?php esc_html_e('Informations fournies de bonne foi. Horaires et tarifs sujets à changement.', 'scout-gm'); ?></p>
+<h2><?php esc_html_e('8. Liens externes', 'scout-gm'); ?></h2><p><?php esc_html_e('Ce site contient des liens vers des sites tiers (Scouts du Canada, Google Maps). Nous ne sommes pas responsables de leur contenu.', 'scout-gm'); ?></p>
+<h2><?php esc_html_e('9. Droit applicable', 'scout-gm'); ?></h2><p><?php esc_html_e('Conditions régies par les lois du Québec et du Canada. Tribunal compétent : district judiciaire de Terrebonne.', 'scout-gm'); ?></p>
+<h2><?php esc_html_e('10. Contact', 'scout-gm'); ?></h2><p><a href="mailto:<?php echo esc_attr(scout_gm_email()); ?>"><?php echo esc_html(scout_gm_email()); ?></a></p>
 </div></section>
 
 

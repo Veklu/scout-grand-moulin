@@ -33,26 +33,26 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<a href="#main-content" class="sr-only" style="position:absolute;left:-9999px">Aller au contenu principal</a>
+<a href="#main-content" class="sr-only" style="position:absolute;left:-9999px"><?php esc_html_e('Aller au contenu principal', 'scout-gm'); ?></a>
 
 <!-- COOKIE BANNER (Loi 25) -->
-<div class="cookie-banner" id="cookieBanner" style="display:none" role="dialog" aria-label="Consentement aux cookies">
+<div class="cookie-banner" id="cookieBanner" style="display:none" role="dialog" aria-label="<?php esc_attr_e('Consentement aux cookies', 'scout-gm'); ?>">
   <div class="cookie-inner">
     <div class="cookie-text">
-      <strong>🍪 Respect de votre vie privée</strong>
-      Conformément à la Loi 25 du Québec, nous utilisons des témoins strictement nécessaires au fonctionnement du site. Les témoins analytiques sont désactivés par défaut.
-      <a href="<?php echo esc_url(get_privacy_policy_url()); ?>">En savoir plus</a>
+      <strong>🍪 <?php esc_html_e('Respect de votre vie privée', 'scout-gm'); ?></strong>
+      <?php esc_html_e('Conformément à la Loi 25 du Québec, nous utilisons des témoins strictement nécessaires au fonctionnement du site. Les témoins analytiques sont désactivés par défaut.', 'scout-gm'); ?>
+      <a href="<?php echo esc_url(get_privacy_policy_url()); ?>"><?php esc_html_e('En savoir plus', 'scout-gm'); ?></a>
     </div>
     <div class="cookie-actions">
-      <button class="btn-accept" onclick="acceptCookies()">Tout accepter</button>
-      <button class="btn-necessary" onclick="necessaryCookies()">Nécessaires seulement</button>
-      <button class="btn-customize" onclick="customizeCookies()">Personnaliser</button>
+      <button class="btn-accept" onclick="acceptCookies()"><?php esc_html_e('Tout accepter', 'scout-gm'); ?></button>
+      <button class="btn-necessary" onclick="necessaryCookies()"><?php esc_html_e('Nécessaires seulement', 'scout-gm'); ?></button>
+      <button class="btn-customize" onclick="customizeCookies()"><?php esc_html_e('Personnaliser', 'scout-gm'); ?></button>
     </div>
   </div>
 </div>
 
 <!-- NAVIGATION -->
-<nav role="navigation" aria-label="Navigation principale">
+<nav role="navigation" aria-label="<?php esc_attr_e('Navigation principale', 'scout-gm'); ?>">
   <div class="nav-inner">
     <a href="<?php echo esc_url(home_url('/')); ?>" class="nav-logo">
       <?php if (has_custom_logo()) : the_custom_logo(); else : ?>
@@ -60,7 +60,7 @@
       <?php endif; ?>
       <div class="nav-logo-text">
         <?php bloginfo('name'); ?>
-        <span>Scouts du Canada · Deux-Montagnes</span>
+        <span><?php esc_html_e('Scouts du Canada · Deux-Montagnes', 'scout-gm'); ?></span>
       </div>
     </a>
 
@@ -74,13 +74,13 @@
         'walker'         => new Scout_GM_Nav_Walker(),
         'fallback_cb'    => function() {
             echo '<ul class="nav-links">';
-            echo '<li><a href="'.esc_url(home_url('/')).'" class="active">Accueil</a></li>';
-            echo '<li><a href="'.esc_url(home_url('/unites/')).'">Unités</a></li>';
-            echo '<li><a href="'.esc_url(home_url('/inscription/')).'">Inscription</a></li>';
-            echo '<li><a href="'.esc_url(home_url('/galerie/')).'">Galerie</a></li>';
-            echo '<li><a href="'.esc_url(home_url('/agenda/')).'">Agenda</a></li>';
-            echo '<li><a href="'.esc_url(home_url('/benevoles/')).'">Bénévoles</a></li>';
-            echo '<li><a href="'.esc_url(home_url('/inscription/')).'" class="nav-cta">S\'inscrire →</a></li>';
+            echo '<li><a href="'.esc_url(home_url('/')).'" class="active">'.esc_html__('Accueil','scout-gm').'</a></li>';
+            echo '<li><a href="'.esc_url(home_url('/unites/')).'">'.esc_html__('Unités','scout-gm').'</a></li>';
+            echo '<li><a href="'.esc_url(home_url('/inscription/')).'">'.esc_html__('Inscription','scout-gm').'</a></li>';
+            echo '<li><a href="'.esc_url(home_url('/galerie/')).'">'.esc_html__('Galerie','scout-gm').'</a></li>';
+            echo '<li><a href="'.esc_url(home_url('/agenda/')).'">'.esc_html__('Agenda','scout-gm').'</a></li>';
+            echo '<li><a href="'.esc_url(home_url('/benevoles/')).'">'.esc_html__('Bénévoles','scout-gm').'</a></li>';
+            echo '<li><a href="'.esc_url(home_url('/inscription/')).'" class="nav-cta">'.esc_html__('S\'inscrire','scout-gm').' →</a></li>';
             echo '</ul>';
         },
     ]); ?>

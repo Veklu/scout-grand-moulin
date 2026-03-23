@@ -378,11 +378,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   
   <div style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:80px 24px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
     <div style="color:white">
-      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,120,255,0.18);border:1px solid rgba(0,120,255,0.35);padding:6px 16px;border-radius:100px;font-size:0.8rem;color:var(--scout-gold);margin-bottom:24px">Scouts du Canada — District Les Ailes du Nord</div>
-      <h1 style="font-size:clamp(2.6rem,5vw,3.8rem);font-weight:700;line-height:1.1;margin-bottom:16px">L'aventure<br>commence <em style="font-style:italic;color:var(--scout-gold)">ici</em></h1>
-      <p style="font-size:1.1rem;color:rgba(255,255,255,0.88);margin-bottom:12px;font-weight:300">Le 5e Groupe scout Grand-Moulin offre aux jeunes de 7 à 17 ans un environnement de croissance, d'entraide et de découverte en plein air.</p>
-      <div class="town-rotator" style="margin-bottom:36px" aria-live="polite" aria-label="Villes desservies">
-        <p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.45);margin-bottom:12px;font-weight:600">Nous desservons votre communauté</p>
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,120,255,0.18);border:1px solid rgba(0,120,255,0.35);padding:6px 16px;border-radius:100px;font-size:0.8rem;color:var(--scout-gold);margin-bottom:24px"><?php esc_html_e('Scouts du Canada — District Les Ailes du Nord', 'scout-gm'); ?></div>
+      <h1 style="font-size:clamp(2.6rem,5vw,3.8rem);font-weight:700;line-height:1.1;margin-bottom:16px"><?php
+        /* translators: %s: the word "ici" wrapped in styled em tag */
+        printf(__('L\'aventure<br>commence %s', 'scout-gm'), '<em style="font-style:italic;color:var(--scout-gold)">' . esc_html__('ici', 'scout-gm') . '</em>');
+      ?></h1>
+      <p style="font-size:1.1rem;color:rgba(255,255,255,0.88);margin-bottom:12px;font-weight:300"><?php esc_html_e('Le 5e Groupe scout Grand-Moulin offre aux jeunes de 7 à 17 ans un environnement de croissance, d\'entraide et de découverte en plein air.', 'scout-gm'); ?></p>
+      <div class="town-rotator" style="margin-bottom:36px" aria-live="polite" aria-label="<?php esc_attr_e('Villes desservies', 'scout-gm'); ?>">
+        <p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.45);margin-bottom:12px;font-weight:600"><?php esc_html_e('Nous desservons votre communauté', 'scout-gm'); ?></p>
         <div style="display:flex;align-items:center;gap:12px;height:48px">
           <span style="font-size:1.4rem">📍</span>
           <span class="town-name" id="townName" style="font-size:clamp(1.4rem,3vw,1.8rem);font-weight:700;color:white;display:inline-block"></span>
@@ -416,20 +419,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
       })();
       </script>
       <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <a href="inscription.html" class="btn btn-primary">Inscrire mon enfant →</a>
-        <a href="unites.html" class="btn btn-outline-white">Découvrir nos unités</a>
+        <a href="<?php echo esc_url(home_url('/inscription/')); ?>" class="btn btn-primary"><?php esc_html_e('Inscrire mon enfant', 'scout-gm'); ?> →</a>
+        <a href="<?php echo esc_url(home_url('/unites/')); ?>" class="btn btn-outline-white"><?php esc_html_e('Découvrir nos unités', 'scout-gm'); ?></a>
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:16px">
       <div style="background:rgba(255,255,255,0.12);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.18);border-radius:20px;padding:28px;color:white">
-        <h3 style="font-size:0.78rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--scout-gold);margin-bottom:16px">📅 Prochaines réunions</h3>
-        <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.12);font-size:0.88rem"><div><strong>Castors</strong> <span style="color:rgba(255,255,255,0.6);font-size:0.78rem">· 7-8 ans</span></div><span style="color:var(--scout-gold);font-weight:500;font-size:0.82rem">Ven 18h45</span></div>
-        <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.12);font-size:0.88rem"><div><strong>Louveteaux</strong> <span style="color:rgba(255,255,255,0.6);font-size:0.78rem">· 9-11 ans</span></div><span style="color:var(--scout-gold);font-weight:500;font-size:0.82rem">Mar 18h45</span></div>
-        <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.12);font-size:0.88rem"><div><strong>Éclaireurs</strong> <span style="color:rgba(255,255,255,0.6);font-size:0.78rem">· 12-14 ans</span></div><span style="color:var(--scout-gold);font-weight:500;font-size:0.82rem">Dim 18h00</span></div>
-        <div style="display:flex;justify-content:space-between;padding:10px 0;font-size:0.88rem"><div><strong>Pionniers</strong> <span style="color:rgba(255,255,255,0.6);font-size:0.78rem">· 14-17 ans</span></div><span style="color:var(--scout-gold);font-weight:500;font-size:0.82rem">À déterminer</span></div>
+        <h3 style="font-size:0.78rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--scout-gold);margin-bottom:16px">📅 <?php esc_html_e('Prochaines réunions', 'scout-gm'); ?></h3>
+        <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.12);font-size:0.88rem"><div><strong><?php esc_html_e('Castors', 'scout-gm'); ?></strong> <span style="color:rgba(255,255,255,0.6);font-size:0.78rem"><?php esc_html_e('· 7-8 ans', 'scout-gm'); ?></span></div><span style="color:var(--scout-gold);font-weight:500;font-size:0.82rem"><?php esc_html_e('Ven 18h45', 'scout-gm'); ?></span></div>
+        <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.12);font-size:0.88rem"><div><strong><?php esc_html_e('Louveteaux', 'scout-gm'); ?></strong> <span style="color:rgba(255,255,255,0.6);font-size:0.78rem"><?php esc_html_e('· 9-11 ans', 'scout-gm'); ?></span></div><span style="color:var(--scout-gold);font-weight:500;font-size:0.82rem"><?php esc_html_e('Mar 18h45', 'scout-gm'); ?></span></div>
+        <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.12);font-size:0.88rem"><div><strong><?php esc_html_e('Éclaireurs', 'scout-gm'); ?></strong> <span style="color:rgba(255,255,255,0.6);font-size:0.78rem"><?php esc_html_e('· 12-14 ans', 'scout-gm'); ?></span></div><span style="color:var(--scout-gold);font-weight:500;font-size:0.82rem"><?php esc_html_e('Dim 18h00', 'scout-gm'); ?></span></div>
+        <div style="display:flex;justify-content:space-between;padding:10px 0;font-size:0.88rem"><div><strong><?php esc_html_e('Pionniers', 'scout-gm'); ?></strong> <span style="color:rgba(255,255,255,0.6);font-size:0.78rem"><?php /* translators: age range */ esc_html_e('· 14-17 ans', 'scout-gm'); ?></span></div><span style="color:var(--scout-gold);font-weight:500;font-size:0.82rem"><?php esc_html_e('À déterminer', 'scout-gm'); ?></span></div>
       </div>
       <div style="background:rgba(255,255,255,0.12);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.18);border-radius:20px;padding:20px 28px;text-align:center;color:white">
-        <p style="font-size:0.88rem;color:rgba(255,255,255,0.8)">Contactez-nous</p>
+        <p style="font-size:0.88rem;color:rgba(255,255,255,0.8)"><?php esc_html_e('Contactez-nous', 'scout-gm'); ?></p>
         <p style="font-size:1.05rem;font-weight:600;color:var(--scout-gold)"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9ef7f0f8f1deabfbedfdf1ebeaf9ecfff0faf3f1ebf2f7f0b0f1ecf9">[email&#160;protected]</a></p>
       </div>
     </div>
@@ -444,28 +447,28 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 <section id="unites">
   <div class="section-header">
-    <h2>Nos unités</h2>
-    <p>Quatre branches adaptées à chaque groupe d'âge, du castor au pionnier.</p>
+    <h2><?php esc_html_e('Nos unités', 'scout-gm'); ?></h2>
+    <p><?php esc_html_e('Quatre branches adaptées à chaque groupe d\'âge, du castor au pionnier.', 'scout-gm'); ?></p>
   </div>
   <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px">
-    <div class="card" style="text-align:center;position:relative;overflow:hidden"><div style="position:absolute;top:0;left:0;right:0;height:4px;background:#d4a017"></div><img src="https://scoutsducanada.ca/content/uploads/2023/12/20230109_-_Badge_castor_final.png" alt="Badge Castors — Scouts du Canada" style="width:72px;height:72px;margin-bottom:12px"><h3 style="font-weight:700;font-size:1.1rem;color:var(--scout-green)">Castors</h3><p style="font-size:0.85rem;color:var(--text-muted);font-weight:500;margin-bottom:12px">7 — 8 ans</p><p style="font-size:0.82rem;color:var(--text-soft)">Découverte du scoutisme par le jeu, la nature et l'apprentissage en petit groupe.</p></div>
-    <div class="card" style="text-align:center;position:relative;overflow:hidden"><div style="position:absolute;top:0;left:0;right:0;height:4px;background:#007748"></div><img src="https://scoutsducanada.ca/content/uploads/2023/06/badge_louveteau.png" alt="Badge Louveteaux — Scouts du Canada" style="width:72px;height:72px;margin-bottom:12px"><h3 style="font-weight:700;font-size:1.1rem;color:var(--scout-green)">Louveteaux</h3><p style="font-size:0.85rem;color:var(--text-muted);font-weight:500;margin-bottom:12px">9 — 11 ans</p><p style="font-size:0.82rem;color:var(--text-soft)">Aventures en meute, développement de l'autonomie et du sens de la communauté.</p></div>
-    <div class="card" style="text-align:center;position:relative;overflow:hidden"><div style="position:absolute;top:0;left:0;right:0;height:4px;background:#0065cc"></div><img src="https://scoutsducanada.ca/content/uploads/2023/08/badge_eclaireur.png" alt="Badge Éclaireurs — Scouts du Canada" style="width:72px;height:72px;margin-bottom:12px"><h3 style="font-weight:700;font-size:1.1rem;color:var(--scout-green)">Éclaireurs</h3><p style="font-size:0.85rem;color:var(--text-muted);font-weight:500;margin-bottom:12px">12 — 14 ans</p><p style="font-size:0.82rem;color:var(--text-soft)">Camps, projets d'équipe, leadership et défis en plein air.</p></div>
-    <div class="card" style="text-align:center;position:relative;overflow:hidden"><div style="position:absolute;top:0;left:0;right:0;height:4px;background:#c0392b"></div><img src="https://scoutsducanada.ca/content/uploads/2023/08/badge_pionnier.png" alt="Badge Pionniers — Scouts du Canada" style="width:72px;height:72px;margin-bottom:12px"><h3 style="font-weight:700;font-size:1.1rem;color:var(--scout-green)">Pionniers</h3><p style="font-size:0.85rem;color:var(--text-muted);font-weight:500;margin-bottom:12px">14 — 17 ans</p><p style="font-size:0.82rem;color:var(--text-soft)">Engagement communautaire, autonomie complète et préparation à la vie adulte.</p></div>
+    <div class="card" style="text-align:center;position:relative;overflow:hidden"><div style="position:absolute;top:0;left:0;right:0;height:4px;background:#d4a017"></div><img src="https://scoutsducanada.ca/content/uploads/2023/12/20230109_-_Badge_castor_final.png" alt="<?php esc_attr_e('Badge Castors — Scouts du Canada', 'scout-gm'); ?>" style="width:72px;height:72px;margin-bottom:12px"><h3 style="font-weight:700;font-size:1.1rem;color:var(--scout-green)"><?php esc_html_e('Castors', 'scout-gm'); ?></h3><p style="font-size:0.85rem;color:var(--text-muted);font-weight:500;margin-bottom:12px"><?php esc_html_e('7 — 8 ans', 'scout-gm'); ?></p><p style="font-size:0.82rem;color:var(--text-soft)"><?php esc_html_e('Découverte du scoutisme par le jeu, la nature et l\'apprentissage en petit groupe.', 'scout-gm'); ?></p></div>
+    <div class="card" style="text-align:center;position:relative;overflow:hidden"><div style="position:absolute;top:0;left:0;right:0;height:4px;background:#007748"></div><img src="https://scoutsducanada.ca/content/uploads/2023/06/badge_louveteau.png" alt="<?php esc_attr_e('Badge Louveteaux — Scouts du Canada', 'scout-gm'); ?>" style="width:72px;height:72px;margin-bottom:12px"><h3 style="font-weight:700;font-size:1.1rem;color:var(--scout-green)"><?php esc_html_e('Louveteaux', 'scout-gm'); ?></h3><p style="font-size:0.85rem;color:var(--text-muted);font-weight:500;margin-bottom:12px"><?php esc_html_e('9 — 11 ans', 'scout-gm'); ?></p><p style="font-size:0.82rem;color:var(--text-soft)"><?php esc_html_e('Aventures en meute, développement de l\'autonomie et du sens de la communauté.', 'scout-gm'); ?></p></div>
+    <div class="card" style="text-align:center;position:relative;overflow:hidden"><div style="position:absolute;top:0;left:0;right:0;height:4px;background:#0065cc"></div><img src="https://scoutsducanada.ca/content/uploads/2023/08/badge_eclaireur.png" alt="<?php esc_attr_e('Badge Éclaireurs — Scouts du Canada', 'scout-gm'); ?>" style="width:72px;height:72px;margin-bottom:12px"><h3 style="font-weight:700;font-size:1.1rem;color:var(--scout-green)"><?php esc_html_e('Éclaireurs', 'scout-gm'); ?></h3><p style="font-size:0.85rem;color:var(--text-muted);font-weight:500;margin-bottom:12px"><?php esc_html_e('12 — 14 ans', 'scout-gm'); ?></p><p style="font-size:0.82rem;color:var(--text-soft)"><?php esc_html_e('Camps, projets d\'équipe, leadership et défis en plein air.', 'scout-gm'); ?></p></div>
+    <div class="card" style="text-align:center;position:relative;overflow:hidden"><div style="position:absolute;top:0;left:0;right:0;height:4px;background:#c0392b"></div><img src="https://scoutsducanada.ca/content/uploads/2023/08/badge_pionnier.png" alt="<?php esc_attr_e('Badge Pionniers — Scouts du Canada', 'scout-gm'); ?>" style="width:72px;height:72px;margin-bottom:12px"><h3 style="font-weight:700;font-size:1.1rem;color:var(--scout-green)"><?php esc_html_e('Pionniers', 'scout-gm'); ?></h3><p style="font-size:0.85rem;color:var(--text-muted);font-weight:500;margin-bottom:12px"><?php esc_html_e('14 — 17 ans', 'scout-gm'); ?></p><p style="font-size:0.82rem;color:var(--text-soft)"><?php esc_html_e('Engagement communautaire, autonomie complète et préparation à la vie adulte.', 'scout-gm'); ?></p></div>
   </div>
 </section>
 
 <section style="background:var(--cream)">
   <div class="section-header">
-    <h2>Pourquoi le scoutisme?</h2>
-    <p>Le scoutisme développe des compétences pour la vie.</p>
+    <h2><?php esc_html_e('Pourquoi le scoutisme?', 'scout-gm'); ?></h2>
+    <p><?php esc_html_e('Le scoutisme développe des compétences pour la vie.', 'scout-gm'); ?></p>
   </div>
   <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
-    <div style="text-align:center;padding:24px"><span style="font-size:2rem;display:block;margin-bottom:12px">🌲</span><h3 style="font-size:1rem;font-weight:700;color:var(--scout-green);margin-bottom:8px">Plein air</h3><p style="font-size:0.85rem;color:var(--text-soft)">Camps, randonnées, canot — une connexion directe avec la nature québécoise.</p></div>
-    <div style="text-align:center;padding:24px"><span style="font-size:2rem;display:block;margin-bottom:12px">🤝</span><h3 style="font-size:1rem;font-weight:700;color:var(--scout-green);margin-bottom:8px">Communauté</h3><p style="font-size:0.85rem;color:var(--text-soft)">Des amitiés durables, l'entraide et le sens de l'appartenance.</p></div>
-    <div style="text-align:center;padding:24px"><span style="font-size:2rem;display:block;margin-bottom:12px">⭐</span><h3 style="font-size:1rem;font-weight:700;color:var(--scout-green);margin-bottom:8px">Leadership</h3><p style="font-size:0.85rem;color:var(--text-soft)">Prise d'initiative, travail d'équipe et développement du caractère.</p></div>
+    <div style="text-align:center;padding:24px"><span style="font-size:2rem;display:block;margin-bottom:12px">🌲</span><h3 style="font-size:1rem;font-weight:700;color:var(--scout-green);margin-bottom:8px"><?php esc_html_e('Plein air', 'scout-gm'); ?></h3><p style="font-size:0.85rem;color:var(--text-soft)"><?php esc_html_e('Camps, randonnées, canot — une connexion directe avec la nature québécoise.', 'scout-gm'); ?></p></div>
+    <div style="text-align:center;padding:24px"><span style="font-size:2rem;display:block;margin-bottom:12px">🤝</span><h3 style="font-size:1rem;font-weight:700;color:var(--scout-green);margin-bottom:8px"><?php esc_html_e('Communauté', 'scout-gm'); ?></h3><p style="font-size:0.85rem;color:var(--text-soft)"><?php esc_html_e('Des amitiés durables, l\'entraide et le sens de l\'appartenance.', 'scout-gm'); ?></p></div>
+    <div style="text-align:center;padding:24px"><span style="font-size:2rem;display:block;margin-bottom:12px">⭐</span><h3 style="font-size:1rem;font-weight:700;color:var(--scout-green);margin-bottom:8px"><?php esc_html_e('Leadership', 'scout-gm'); ?></h3><p style="font-size:0.85rem;color:var(--text-soft)"><?php esc_html_e('Prise d\'initiative, travail d\'équipe et développement du caractère.', 'scout-gm'); ?></p></div>
   </div>
-  <div style="text-align:center;margin-top:24px"><a href="inscription.html" class="btn btn-green">Inscrire mon enfant →</a></div>
+  <div style="text-align:center;margin-top:24px"><a href="<?php echo esc_url(home_url('/inscription/')); ?>" class="btn btn-green"><?php esc_html_e('Inscrire mon enfant', 'scout-gm'); ?> →</a></div>
 </section>
 
 <script>

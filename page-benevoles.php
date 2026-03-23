@@ -524,15 +524,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .person-card:hover .person-card-bar { height: 6px; }
 </style>
 
-<div class="page-hero"><h1>Notre équipe</h1><p>Des bénévoles passionnés qui donnent de leur temps pour faire grandir les jeunes de notre communauté.</p></div>
+<div class="page-hero"><h1><?php esc_html_e('Notre équipe', 'scout-gm'); ?></h1><p><?php esc_html_e('Des bénévoles passionnés qui donnent de leur temps pour faire grandir les jeunes de notre communauté.', 'scout-gm'); ?></p></div>
 
 <!-- STATS BANNER -->
 <section style="padding-top:0;margin-top:-30px;position:relative;z-index:2"><div class="container">
 <div class="stats-banner fade-up">
-  <div class="stat-item"><div class="stat-number"><?php echo $total_members; ?>+</div><div class="stat-label">Bénévoles actifs</div></div>
-  <div class="stat-item"><div class="stat-number">4</div><div class="stat-label">Unités scoutes</div></div>
-  <div class="stat-item"><div class="stat-number"><?php echo count($teams); ?></div><div class="stat-label">Équipes</div></div>
-  <div class="stat-item"><div class="stat-number">60+</div><div class="stat-label">Jeunes encadrés</div></div>
+  <div class="stat-item"><div class="stat-number"><?php echo $total_members; ?>+</div><div class="stat-label"><?php esc_html_e('Bénévoles actifs', 'scout-gm'); ?></div></div>
+  <div class="stat-item"><div class="stat-number">4</div><div class="stat-label"><?php esc_html_e('Unités scoutes', 'scout-gm'); ?></div></div>
+  <div class="stat-item"><div class="stat-number"><?php echo count($teams); ?></div><div class="stat-label"><?php esc_html_e('Équipes', 'scout-gm'); ?></div></div>
+  <div class="stat-item"><div class="stat-number">60+</div><div class="stat-label"><?php esc_html_e('Jeunes encadrés', 'scout-gm'); ?></div></div>
 </div>
 </div></section>
 
@@ -679,7 +679,7 @@ if ($is_admin_section):
     if (!empty($no_unit)):
 ?>
 <div class="unit-subgroup fade-up" style="margin-bottom:32px">
-  <h3 style="font-size:1.05rem;color:#6a6a62;margin:0 0 14px">Autres</h3>
+  <h3 style="font-size:1.05rem;color:#6a6a62;margin:0 0 14px"><?php esc_html_e('Autres', 'scout-gm'); ?></h3>
   <div class="person-grid">
   <?php foreach ($no_unit as $i => $user):
       $title = function_exists('scout_gm_get_title') ? scout_gm_get_title($user->ID) : '';
@@ -713,7 +713,7 @@ if ($is_admin_section):
 <?php endif; endif; ?>
 <?php else: ?>
 <div style="text-align:center;padding:40px;color:#6a6a62">
-  <p>Aucun membre dans cette section pour le moment.</p>
+  <p><?php esc_html_e('Aucun membre dans cette section pour le moment.', 'scout-gm'); ?></p>
 </div>
 <?php endif; ?>
 </div></section>
@@ -734,12 +734,12 @@ foreach ($opportunities as $opp) {
 if (!empty($active_opps)):
 $cat_icons = ['cuisine'=>'🍳','aide_camp'=>'⛺','transport'=>'🚗','animation'=>'🎪','logistique'=>'📦','evenement'=>'🎉','formation'=>'📚','general'=>'🤝'];
 $urgency_colors = ['low'=>'#27ae60','normal'=>'#e67e22','high'=>'#e67e22','critical'=>'#c0392b'];
-$urgency_labels = ['low'=>'','normal'=>'','high'=>'Urgent','critical'=>'Critique!'];
+$urgency_labels = ['low'=>'','normal'=>'','high'=>__('Urgent','scout-gm'),'critical'=>__('Critique!','scout-gm')];
 ?>
 <section style="background:#fff8f0"><div class="container">
 <div class="team-intro fade-up">
-  <h2>🙋 On a besoin de vous!</h2>
-  <p>Voici les besoins actuels. Chaque coup de main fait une différence!</p>
+  <h2>🙋 <?php esc_html_e('On a besoin de vous!', 'scout-gm'); ?></h2>
+  <p><?php esc_html_e('Voici les besoins actuels. Chaque coup de main fait une différence!', 'scout-gm'); ?></p>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:24px">
 <?php foreach ($active_opps as $i => $opp):
@@ -773,13 +773,17 @@ $urgency_labels = ['low'=>'','normal'=>'','high'=>'Urgent','critical'=>'Critique
       <?php endif; ?>
       <?php if ($location): ?><span>📍 <?php echo esc_html($location); ?></span><?php endif; ?>
       <?php if ($remaining !== null): ?>
-        <span>👥 <?php echo $remaining; ?> place<?php echo $remaining > 1 ? 's' : ''; ?> restante<?php echo $remaining > 1 ? 's' : ''; ?> sur <?php echo esc_html($spots); ?></span>
+        <span>👥 <?php printf(
+          /* translators: %1$d: number of remaining spots, %2$s: total spots */
+          _n('%1$d place restante sur %2$s', '%1$d places restantes sur %2$s', $remaining, 'scout-gm'),
+          $remaining, esc_html($spots)
+        ); ?></span>
         <div style="background:#e0ddd4;border-radius:10px;height:6px;overflow:hidden;margin-top:2px">
           <div style="background:<?php echo $uc; ?>;height:100%;width:<?php echo round(($filled / intval($spots)) * 100); ?>%;border-radius:10px"></div>
         </div>
       <?php endif; ?>
     </div>
-    <a href="mailto:<?php echo esc_attr($contact); ?>?subject=<?php echo rawurlencode('Bénévolat : ' . $opp->post_title); ?>" style="display:inline-block;padding:8px 16px;background:#007748;color:#fff;border-radius:6px;font-size:0.82rem;font-weight:600;text-decoration:none">Je veux aider →</a>
+    <a href="mailto:<?php echo esc_attr($contact); ?>?subject=<?php echo rawurlencode(esc_html__('Bénévolat : ', 'scout-gm') . $opp->post_title); ?>" style="display:inline-block;padding:8px 16px;background:#007748;color:#fff;border-radius:6px;font-size:0.82rem;font-weight:600;text-decoration:none"><?php esc_html_e('Je veux aider', 'scout-gm'); ?> →</a>
   </div>
 </div>
 <?php endforeach; ?>
@@ -790,25 +794,26 @@ $urgency_labels = ['low'=>'','normal'=>'','high'=>'Urgent','critical'=>'Critique
 <!-- CTA + SHARE -->
 <section><div class="container">
 <div class="volunteer-cta fade-up">
-  <h2>Rejoignez notre équipe!</h2>
-  <p>Nous recherchons toujours des bénévoles pour encadrer les activités de nos jeunes scouts.</p>
+  <h2><?php esc_html_e('Rejoignez notre équipe!', 'scout-gm'); ?></h2>
+  <p><?php esc_html_e('Nous recherchons toujours des bénévoles pour encadrer les activités de nos jeunes scouts.', 'scout-gm'); ?></p>
   <div class="cta-roles">
-    <span class="cta-role">Animateur·rice</span>
-    <span class="cta-role">Aide-animateur·rice</span>
-    <span class="cta-role">Membre du CA</span>
-    <span class="cta-role">Soutien logistique</span>
-    <span class="cta-role">Cuisinier·ère de camp</span>
-    <span class="cta-role">Aide au camp</span>
+    <span class="cta-role"><?php esc_html_e('Animateur·rice', 'scout-gm'); ?></span>
+    <span class="cta-role"><?php esc_html_e('Aide-animateur·rice', 'scout-gm'); ?></span>
+    <span class="cta-role"><?php esc_html_e('Membre du CA', 'scout-gm'); ?></span>
+    <span class="cta-role"><?php esc_html_e('Soutien logistique', 'scout-gm'); ?></span>
+    <span class="cta-role"><?php esc_html_e('Cuisinier·ère de camp', 'scout-gm'); ?></span>
+    <span class="cta-role"><?php esc_html_e('Aide au camp', 'scout-gm'); ?></span>
   </div>
-  <a href="mailto:<?php echo esc_attr(function_exists('scout_gm_email') ? scout_gm_email() : 'info@5escoutgrandmoulin.org'); ?>" style="display:inline-block;background:white;color:#007748;padding:14px 32px;border-radius:8px;font-weight:700;text-decoration:none;font-size:0.95rem;margin-bottom:20px">Nous contacter ✉️</a>
+  <a href="mailto:<?php echo esc_attr(function_exists('scout_gm_email') ? scout_gm_email() : 'info@5escoutgrandmoulin.org'); ?>" style="display:inline-block;background:white;color:#007748;padding:14px 32px;border-radius:8px;font-weight:700;text-decoration:none;font-size:0.95rem;margin-bottom:20px"><?php esc_html_e('Nous contacter', 'scout-gm'); ?> ✉️</a>
   
   <!-- Share -->
   <div style="margin-top:12px">
-    <p style="font-size:0.82rem;opacity:0.7;margin-bottom:10px">Partagez cette page et aidez-nous à recruter!</p>
+    <p style="font-size:0.82rem;opacity:0.7;margin-bottom:10px"><?php esc_html_e('Partagez cette page et aidez-nous à recruter!', 'scout-gm'); ?></p>
     <?php
     $share_url = urlencode(get_permalink());
-    $share_title = urlencode('Bénévoles recherchés — ' . get_bloginfo('name'));
-    $share_text = urlencode('Le ' . get_bloginfo('name') . ' recherche des bénévoles! Joignez-vous à notre équipe scoute.');
+    $share_title = urlencode(__('Bénévoles recherchés', 'scout-gm') . ' — ' . get_bloginfo('name'));
+    /* translators: %s: site name */
+    $share_text = urlencode(sprintf(__('Le %s recherche des bénévoles! Joignez-vous à notre équipe scoute.', 'scout-gm'), get_bloginfo('name')));
     ?>
     <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
       <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $share_url; ?>" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#1877F2;color:#fff;border-radius:8px;text-decoration:none;font-size:0.82rem;font-weight:600">
@@ -827,7 +832,7 @@ $urgency_labels = ['low'=>'','normal'=>'','high'=>'Urgent','critical'=>'Critique
         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         WhatsApp
       </a>
-      <button onclick="navigator.clipboard.writeText(window.location.href);this.textContent='✅ Copié!';var b=this;setTimeout(function(){b.innerHTML='🔗 Copier le lien'},1500)" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:rgba(255,255,255,0.2);color:#fff;border:1.5px solid rgba(255,255,255,0.3);border-radius:8px;font-size:0.82rem;font-weight:600;cursor:pointer">🔗 Copier le lien</button>
+      <button onclick="navigator.clipboard.writeText(window.location.href);this.textContent=<?php echo wp_json_encode('✅ ' . __('Copié!', 'scout-gm')); ?>;var b=this;setTimeout(function(){b.innerHTML=<?php echo wp_json_encode('🔗 ' . __('Copier le lien', 'scout-gm')); ?>},1500)" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:rgba(255,255,255,0.2);color:#fff;border:1.5px solid rgba(255,255,255,0.3);border-radius:8px;font-size:0.82rem;font-weight:600;cursor:pointer">🔗 <?php esc_html_e('Copier le lien', 'scout-gm'); ?></button>
     </div>
   </div>
 </div>

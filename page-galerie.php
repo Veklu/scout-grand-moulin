@@ -367,22 +367,22 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 </style>
 
-<div class="page-hero"><h1>Galerie photos</h1><p>Souvenirs de nos activités et aventures scoutes.</p></div>
+<div class="page-hero"><h1><?php esc_html_e('Galerie photos', 'scout-gm'); ?></h1><p><?php esc_html_e('Souvenirs de nos activités et aventures scoutes.', 'scout-gm'); ?></p></div>
 
 <section><div class="container">
 
 <div class="gallery-albums" id="albumFilter">
-  <button class="active" data-album="all">Toutes</button>
+  <button class="active" data-album="all"><?php esc_html_e('Toutes', 'scout-gm'); ?></button>
 </div>
 
-<div class="gallery-loading" id="galleryLoading">⏳ Chargement des photos...</div>
+<div class="gallery-loading" id="galleryLoading">⏳ <?php esc_html_e('Chargement des photos...', 'scout-gm'); ?></div>
 <div class="gallery-grid" id="galleryGrid" style="display:none"></div>
 <div class="gallery-empty" id="galleryEmpty" style="display:none">
   <span>📷</span>
-  <p>Aucune photo pour le moment.<br>Ajoutez des images dans <strong>Médias</strong> et assignez-les à un album.</p>
+  <p><?php echo __('Aucune photo pour le moment.<br>Ajoutez des images dans <strong>Médias</strong> et assignez-les à un album.', 'scout-gm'); ?></p>
 </div>
 
-<div class="consent-note" style="margin-top:32px"><strong>📷 Politique photos (Loi 25) :</strong> Seuls les jeunes dont les parents ont fourni un consentement écrit apparaissent sur ces images. L'autorisation est distincte de l'inscription et son refus n'empêche pas la participation aux activités. Pour retirer une photo : <a href="mailto:<?php echo scout_gm_email(); ?>"><?php echo scout_gm_email(); ?></a>.</div>
+<div class="consent-note" style="margin-top:32px"><strong>📷 <?php esc_html_e('Politique photos (Loi 25) :', 'scout-gm'); ?></strong> <?php printf(__('Seuls les jeunes dont les parents ont fourni un consentement écrit apparaissent sur ces images. L\'autorisation est distincte de l\'inscription et son refus n\'empêche pas la participation aux activités. Pour retirer une photo : %s.', 'scout-gm'), '<a href="mailto:' . esc_attr(scout_gm_email()) . '">' . esc_html(scout_gm_email()) . '</a>'); ?></div>
 
 </div></section>
 
